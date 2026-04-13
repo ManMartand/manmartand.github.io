@@ -9,91 +9,105 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #0b0b0b;
-      color: white;
+      background: #0f0f10;
+      color: #eaeaea;
     }
 
     /* NAVBAR */
     nav {
-      background: #8B0000;
-      padding: 15px;
-      text-align: center;
-      font-weight: bold;
-      letter-spacing: 1px;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 40px;
+      background: #111;
+      border-bottom: 1px solid #222;
+    }
+
+    nav h2 {
+      color: #f5c542;
+      margin: 0;
+      font-size: 18px;
     }
 
     nav a {
-      color: gold;
-      margin: 0 15px;
+      color: #ccc;
+      margin-left: 20px;
       text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #f5c542;
     }
 
     /* HERO */
     .hero {
-      text-align: center;
-      padding: 80px 20px;
-      background: linear-gradient(135deg, #8B0000, #ff0000);
+      padding: 80px 40px;
+      max-width: 900px;
     }
 
     .hero h1 {
-      font-size: 40px;
-      color: gold;
+      font-size: 38px;
+      margin: 0;
+      color: white;
+    }
+
+    .hero span {
+      color: #f5c542;
     }
 
     .hero p {
-      font-size: 18px;
-      margin-top: 10px;
+      margin-top: 15px;
+      color: #aaa;
+      font-size: 16px;
+      line-height: 1.6;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: gold;
-      color: black;
-      font-weight: bold;
+      margin-top: 25px;
+      padding: 10px 20px;
+      border: 1px solid #f5c542;
+      color: #f5c542;
       text-decoration: none;
-      border-radius: 30px;
+      border-radius: 6px;
       transition: 0.3s;
     }
 
     .btn:hover {
-      background: #ffcc00;
-      transform: scale(1.05);
+      background: #f5c542;
+      color: black;
     }
 
     /* SECTIONS */
     section {
-      padding: 50px 20px;
-      text-align: center;
+      padding: 50px 40px;
+      max-width: 900px;
     }
 
     h2 {
-      color: gold;
+      font-size: 20px;
       margin-bottom: 20px;
+      color: #f5c542;
     }
 
     .card {
-      background: #1a1a1a;
-      margin: 10px auto;
+      background: #151515;
       padding: 20px;
-      max-width: 600px;
-      border-radius: 10px;
-      border: 1px solid #8B0000;
-      transition: 0.3s;
+      border-radius: 8px;
+      border: 1px solid #222;
+      margin-bottom: 15px;
     }
 
     .card:hover {
-      box-shadow: 0 0 20px red;
-      transform: translateY(-5px);
+      border: 1px solid #8B0000;
     }
 
-    /* FOOTER */
     footer {
-      background: #8B0000;
-      padding: 15px;
       text-align: center;
-      color: gold;
+      padding: 20px;
+      font-size: 13px;
+      color: #777;
+      border-top: 1px solid #222;
     }
   </style>
 </head>
@@ -101,28 +115,32 @@
 <body>
 
   <nav>
-    Manu Martund | Cloud Engineer
-    <br>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <h2>Manu Martund</h2>
+    <div>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 
   <div class="hero">
-    <h1>Cloud & DevOps Engineer</h1>
-    <p>AWS | Terraform | Kubernetes | Linux</p>
-    <a class="btn" href="Resume_Manu_Martund_Dadhich.pdf" target="_blank">Download Resume</a>
+    <h1>Cloud & DevOps <span>Engineer</span></h1>
+    <p>
+      Working across AWS, Terraform, and production systems. Focused on building stable,
+      scalable infrastructure and solving real-world cloud issues.
+    </p>
+
+    <a class="btn" href="Resume_Manu_Martund_Dadhich.pdf" target="_blank">
+      Download Resume
+    </a>
   </div>
 
   <section id="about">
-    <h2>About Me</h2>
+    <h2>About</h2>
     <div class="card">
-      <p>
-        I’m a Cloud & DevOps Engineer with 4+ years of experience in AWS operations,
-        production support, and infrastructure monitoring. I enjoy solving real-world
-        cloud problems and building reliable systems.
-      </p>
+      4+ years of experience in cloud operations and production support. Worked on AWS services,
+      monitoring, access management, and incident handling in live environments.
     </div>
   </section>
 
@@ -131,18 +149,15 @@
     <div class="card">
       AWS (EC2, S3, IAM, VPC, CloudWatch)<br>
       Terraform | Docker | Kubernetes<br>
-      Linux | CI/CD | Monitoring | Production Support
+      Linux | CI/CD | Monitoring
     </div>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
     <div class="card">
-      <h3>Terraform + ALB + ASG</h3>
-      <p>
-        Built scalable AWS infrastructure using Terraform with Auto Scaling
-        and Load Balancer to ensure high availability.
-      </p>
+      <strong>Terraform + ALB + ASG</strong><br>
+      Built scalable AWS infra using Terraform with Auto Scaling and Load Balancer.
     </div>
   </section>
 
@@ -150,13 +165,12 @@
     <h2>Contact</h2>
     <div class="card">
       📧 manumartund@gmail.com <br>
-      📱 8619230802 <br><br>
-      <a class="btn" href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+      📱 8619230802
     </div>
   </section>
 
   <footer>
-    Built by Manu Martund ⚡ Iron Man Style Portfolio
+    © 2026 Manu Martund
   </footer>
 
 </body>
