@@ -13,7 +13,6 @@
       color: #eaeaea;
     }
 
-    /* NAVBAR */
     nav {
       display: flex;
       justify-content: space-between;
@@ -39,7 +38,6 @@
       color: #f5c542;
     }
 
-    /* HERO */
     .hero {
       padding: 80px 40px;
       max-width: 900px;
@@ -48,11 +46,15 @@
     .hero h1 {
       font-size: 38px;
       margin: 0;
-      color: white;
     }
 
-    .hero span {
+    .typing {
       color: #f5c542;
+      font-weight: bold;
+      border-right: 2px solid #f5c542;
+      padding-right: 5px;
+      white-space: nowrap;
+      overflow: hidden;
     }
 
     .hero p {
@@ -64,12 +66,13 @@
 
     .btn {
       display: inline-block;
-      margin-top: 25px;
+      margin-top: 20px;
       padding: 10px 20px;
       border: 1px solid #f5c542;
       color: #f5c542;
       text-decoration: none;
       border-radius: 6px;
+      margin-right: 10px;
       transition: 0.3s;
     }
 
@@ -78,7 +81,6 @@
       color: black;
     }
 
-    /* SECTIONS */
     section {
       padding: 50px 40px;
       max-width: 900px;
@@ -96,10 +98,33 @@
       border-radius: 8px;
       border: 1px solid #222;
       margin-bottom: 15px;
+      transition: 0.3s;
     }
 
     .card:hover {
       border: 1px solid #8B0000;
+    }
+
+    /* Timeline */
+    .timeline {
+      border-left: 2px solid #222;
+      padding-left: 20px;
+    }
+
+    .timeline-item {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      background: #f5c542;
+      border-radius: 50%;
+      position: absolute;
+      left: -26px;
+      top: 5px;
     }
 
     footer {
@@ -114,64 +139,115 @@
 
 <body>
 
-  <nav>
-    <h2>Manu Martund</h2>
-    <div>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-
-  <div class="hero">
-    <h1>Cloud & DevOps <span>Engineer</span></h1>
-    <p>
-      Working across AWS, Terraform, and production systems. Focused on building stable,
-      scalable infrastructure and solving real-world cloud issues.
-    </p>
-
-    <a class="btn" href="Resume_Manu_Martund_Dadhich.pdf" target="_blank">
-      Download Resume
-    </a>
+<nav>
+  <h2>Manu Martund</h2>
+  <div>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
   </div>
+</nav>
 
-  <section id="about">
-    <h2>About</h2>
-    <div class="card">
-      4+ years of experience in cloud operations and production support. Worked on AWS services,
-      monitoring, access management, and incident handling in live environments.
+<div class="hero">
+  <h1>Hi, I’m Manu</h1>
+  <h1 class="typing" id="typing"></h1>
+
+  <p>
+    Cloud & DevOps Engineer with hands-on experience in AWS, Terraform, and production support.
+    I focus on building stable systems and solving real-world infrastructure issues.
+  </p>
+
+  <a class="btn" href="Resume_Manu_Martund_Dadhich.pdf" target="_blank">Download Resume</a>
+  <a class="btn" href="mailto:manumartund@gmail.com">Hire Me</a>
+</div>
+
+<section id="about">
+  <h2>About</h2>
+  <div class="card">
+    4+ years of experience in cloud operations and support. Worked with AWS services,
+    monitoring, IAM, and incident management in production environments.
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <strong>IDFC FIRST Bank</strong><br>
+      Manager – Operations & Tech Support<br>
+      <small>Sep 2023 – Jan 2026</small>
     </div>
-  </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="card">
-      AWS (EC2, S3, IAM, VPC, CloudWatch)<br>
-      Terraform | Docker | Kubernetes<br>
-      Linux | CI/CD | Monitoring
+    <div class="timeline-item">
+      <strong>ETTL Jaipur</strong><br>
+      Cloud Operations Support<br>
+      <small>Mar 2022 – Aug 2024</small>
     </div>
-  </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="card">
-      <strong>Terraform + ALB + ASG</strong><br>
-      Built scalable AWS infra using Terraform with Auto Scaling and Load Balancer.
+    <div class="timeline-item">
+      <strong>Mechanical Engineer</strong><br>
+      <small>Jan 2020 – Feb 2022</small>
     </div>
-  </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="card">
-      📧 manumartund@gmail.com <br>
-      📱 8619230802
-    </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    © 2026 Manu Martund
-  </footer>
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="card">
+    AWS (EC2, S3, IAM, VPC, CloudWatch)<br>
+    Terraform | Docker | Kubernetes<br>
+    Linux | CI/CD | Monitoring
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="card">
+    <strong>Terraform + ALB + ASG</strong><br>
+    Built scalable AWS infrastructure using Terraform with Auto Scaling and Load Balancer.
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    📧 manumartund@gmail.com <br>
+    📱 8619230802
+  </div>
+</section>
+
+<footer>
+  © 2026 Manu Martund
+</footer>
+
+<script>
+  const text = ["Cloud Engineer", "AWS Specialist", "DevOps Enthusiast"];
+  let i = 0, j = 0, current = "", isDeleting = false;
+
+  function type() {
+    current = text[i];
+    document.getElementById("typing").textContent =
+      current.substring(0, j);
+
+    if (!isDeleting && j < current.length) {
+      j++;
+      setTimeout(type, 100);
+    } else if (isDeleting && j > 0) {
+      j--;
+      setTimeout(type, 50);
+    } else {
+      isDeleting = !isDeleting;
+      if (!isDeleting) i = (i + 1) % text.length;
+      setTimeout(type, 800);
+    }
+  }
+
+  type();
+</script>
 
 </body>
 </html>
