@@ -1,200 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Manu Martund | Cloud Engineer</title>
+  <meta charset="UTF-8">
+  <title>Manu Martund | Cloud Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0b0b0b;
+      color: white;
+    }
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
+    /* NAVBAR */
+    nav {
+      background: #8B0000;
+      padding: 15px;
+      text-align: center;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
 
-body {
-  background: linear-gradient(135deg, #0f172a, #020617);
-  color: #e2e8f0;
-}
+    nav a {
+      color: gold;
+      margin: 0 15px;
+      text-decoration: none;
+    }
 
-.container {
-  width: 85%;
-  margin: auto;
-}
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #8B0000, #ff0000);
+    }
 
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 80px 0;
-}
+    .hero h1 {
+      font-size: 40px;
+      color: gold;
+    }
 
-.hero h1 {
-  font-size: 3rem;
-  font-weight: 600;
-}
+    .hero p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
 
-.hero p {
-  margin: 15px 0;
-  color: #94a3b8;
-}
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: gold;
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
 
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 10px;
-  border-radius: 25px;
-  background: #38bdf8;
-  color: #000;
-  font-weight: 500;
-  transition: 0.3s;
-}
+    .btn:hover {
+      background: #ffcc00;
+      transform: scale(1.05);
+    }
 
-.btn:hover {
-  background: #0ea5e9;
-}
+    /* SECTIONS */
+    section {
+      padding: 50px 20px;
+      text-align: center;
+    }
 
-/* SECTION */
-.section {
-  margin: 60px 0;
-}
+    h2 {
+      color: gold;
+      margin-bottom: 20px;
+    }
 
-.section h2 {
-  margin-bottom: 20px;
-  font-size: 1.8rem;
-}
+    .card {
+      background: #1a1a1a;
+      margin: 10px auto;
+      padding: 20px;
+      max-width: 600px;
+      border-radius: 10px;
+      border: 1px solid #8B0000;
+      transition: 0.3s;
+    }
 
-/* CARD */
-.card {
-  background: rgba(30, 41, 59, 0.6);
-  backdrop-filter: blur(10px);
-  padding: 20px;
-  margin: 15px 0;
-  border-radius: 12px;
-  transition: 0.3s;
-}
+    .card:hover {
+      box-shadow: 0 0 20px red;
+      transform: translateY(-5px);
+    }
 
-.card:hover {
-  transform: translateY(-5px);
-}
-
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 30px;
-  color: #64748b;
-}
-</style>
+    /* FOOTER */
+    footer {
+      background: #8B0000;
+      padding: 15px;
+      text-align: center;
+      color: gold;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>Manu Martund</h1>
-  <p>Cloud & DevOps Engineer | AWS | Azure | Terraform | Monitoring</p>
+  <nav>
+    Manu Martund | Cloud Engineer
+    <br>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <a href="Resume_Manu_Martund_Dadhich.pdf" class="btn">Download Resume</a>
-  <a href="https://github.com/ManMartand" class="btn">GitHub</a>
-  <a href="https://www.linkedin.com/in/mmd-manu-martund-clouder" class="btn">LinkedIn</a>
-</div>
-
-<div class="container">
-
-<!-- ABOUT -->
-<div class="section">
-  <h2>About Me</h2>
-  <div class="card">
-    Cloud & Application Support Engineer with ~6 years of total experience, including ~4 years in AWS and Azure cloud environments. 
-    I specialize in production support, monitoring, and incident management, ensuring high system availability and reliability.
-  </div>
-</div>
-
-<!-- SKILLS -->
-<div class="section">
-  <h2>Skills</h2>
-  <div class="grid">
-    <div class="card">AWS (EC2, S3, IAM, VPC, CloudWatch)</div>
-    <div class="card">Azure (VMs, VNet, Storage, AVD)</div>
-    <div class="card">Terraform & IaC</div>
-    <div class="card">Docker & CI/CD</div>
-    <div class="card">Linux & Monitoring</div>
-    <div class="card">Networking & Security</div>
-  </div>
-</div>
-
-<!-- EXPERIENCE -->
-<div class="section">
-  <h2>Experience</h2>
-
-  <div class="card">
-    <h3>IDFC FIRST Bank</h3>
-    <p>Cloud Operations Support (2023–2026)</p>
-    <ul>
-      <li>Maintained 99.9% uptime for AWS production systems</li>
-      <li>Reduced incident resolution time by ~30%</li>
-      <li>Implemented monitoring & alerting</li>
-      <li>Worked on IAM security and cost optimization</li>
-    </ul>
+  <div class="hero">
+    <h1>Cloud & DevOps Engineer</h1>
+    <p>AWS | Terraform | Kubernetes | Linux</p>
+    <a class="btn" href="Resume_Manu_Martund_Dadhich.pdf" target="_blank">Download Resume</a>
   </div>
 
-  <div class="card">
-    <h3>ETTL</h3>
-    <p>Cloud Engineer (2022–2023)</p>
-    <ul>
-      <li>Worked on Azure migration projects</li>
-      <li>Managed VMs, storage, networking</li>
-      <li>Handled monitoring and troubleshooting</li>
-    </ul>
-  </div>
-
-</div>
-
-<!-- PROJECTS -->
-<div class="section">
-  <h2>Projects</h2>
-
-  <div class="grid">
+  <section id="about">
+    <h2>About Me</h2>
     <div class="card">
-      <h3>AWS High Availability Architecture</h3>
-      <p>EC2, Auto Scaling, Load Balancer, RDS, VPC setup</p>
+      <p>
+        I’m a Cloud & DevOps Engineer with 4+ years of experience in AWS operations,
+        production support, and infrastructure monitoring. I enjoy solving real-world
+        cloud problems and building reliable systems.
+      </p>
     </div>
+  </section>
 
+  <section id="skills">
+    <h2>Skills</h2>
     <div class="card">
-      <h3>Serverless Automation</h3>
-      <p>Lambda + S3 event-driven workflows</p>
+      AWS (EC2, S3, IAM, VPC, CloudWatch)<br>
+      Terraform | Docker | Kubernetes<br>
+      Linux | CI/CD | Monitoring | Production Support
     </div>
+  </section>
 
+  <section id="projects">
+    <h2>Projects</h2>
     <div class="card">
-      <h3>Monitoring System</h3>
-      <p>CloudWatch dashboards & alerts</p>
+      <h3>Terraform + ALB + ASG</h3>
+      <p>
+        Built scalable AWS infrastructure using Terraform with Auto Scaling
+        and Load Balancer to ensure high availability.
+      </p>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- CONTACT -->
-<div class="section">
-  <h2>Contact</h2>
-  <div class="card">
-    <p>Email: manumartund98@gmail.com</p>
-    <p>Phone: 9970130735</p>
-  </div>
-</div>
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      📧 manumartund@gmail.com <br>
+      📱 8619230802 <br><br>
+      <a class="btn" href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+    </div>
+  </section>
 
-</div>
-
-<footer>
-  © 2026 Manu Martund | Cloud Engineer Portfolio
-</footer>
+  <footer>
+    Built by Manu Martund ⚡ Iron Man Style Portfolio
+  </footer>
 
 </body>
 </html>
