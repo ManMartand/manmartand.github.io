@@ -21,21 +21,18 @@ body {
   margin: auto;
 }
 
-/* NAVBAR */
+/* NAV */
 nav {
   position: sticky;
   top: 0;
-  backdrop-filter: blur(10px);
-  background: rgba(20,20,20,0.8);
+  background: rgba(20,20,20,0.9);
   display: flex;
   justify-content: space-between;
   padding: 15px 20px;
   border-bottom: 1px solid #222;
 }
 
-nav h2 {
-  color: #f5c542;
-}
+nav h2 { color: #f5c542; }
 
 nav a {
   margin-left: 20px;
@@ -43,18 +40,14 @@ nav a {
   text-decoration: none;
 }
 
-nav a:hover {
-  color: #f5c542;
-}
+nav a:hover { color: #f5c542; }
 
 /* HERO */
 .hero {
   padding: 80px 20px;
 }
 
-.hero h1 {
-  font-size: 40px;
-}
+.hero h1 { font-size: 40px; }
 
 .typing {
   color: #f5c542;
@@ -65,19 +58,16 @@ nav a:hover {
 .hero p {
   margin-top: 20px;
   color: #aaa;
-  line-height: 1.6;
 }
 
 .btn {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 18px;
-  border-radius: 6px;
   border: 1px solid #f5c542;
   color: #f5c542;
+  border-radius: 6px;
   text-decoration: none;
-  margin-right: 10px;
-  transition: 0.3s;
 }
 
 .btn:hover {
@@ -95,16 +85,16 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* CARDS */
+/* CARD */
 .card {
   background: rgba(255,255,255,0.05);
-  border: 1px solid #222;
   padding: 20px;
   border-radius: 10px;
+  border: 1px solid #222;
   margin-bottom: 15px;
 }
 
-/* PROJECT GRID */
+/* PROJECTS */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
@@ -116,45 +106,46 @@ h2 {
   border-radius: 10px;
   background: rgba(255,255,255,0.04);
   border: 1px solid #222;
-  transition: 0.3s;
 }
 
-.project:hover {
-  border: 1px solid #f5c542;
+/* 🔥 AWS STYLE ARCHITECTURE */
+.arch {
+  text-align: center;
 }
 
-/* ARCHITECTURE */
-.architecture {
+.arch-row {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 30px;
+  justify-content: center;
+  gap: 40px;
+  margin: 20px 0;
 }
 
-.node {
-  width: 120px;
-  height: 120px;
-  border-radius: 12px;
+.box {
+  padding: 15px 25px;
   background: rgba(255,255,255,0.05);
   border: 1px solid #222;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
-  font-weight: bold;
+  min-width: 140px;
 }
 
-.node:hover {
+.box:hover {
   border: 1px solid #f5c542;
   transform: scale(1.05);
 }
 
-.info-box {
+.line {
+  height: 30px;
+  width: 2px;
+  background: #444;
+  margin: auto;
+}
+
+.info {
   margin-top: 25px;
   padding: 20px;
   border-radius: 10px;
-  background: rgba(255,255,255,0.05);
   border: 1px solid #222;
 }
 
@@ -170,100 +161,83 @@ footer {
 
 <body>
 
-<!-- NAV -->
 <nav>
   <h2>Manu Martund</h2>
   <div>
     <a href="#about">About</a>
-    <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#architecture">Architecture</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <h1>Hi, I'm Manu 👋</h1>
   <h1 class="typing" id="typing"></h1>
 
   <p>
-    Cloud & DevOps Engineer with 4+ years of experience in AWS, Terraform, and production systems.
-    I focus on building reliable infrastructure and solving real-world cloud problems.
+    Cloud Engineer focused on AWS, Terraform, and production systems.
   </p>
 
   <a class="btn" href="Resume_Manu_Martund_Dadhich.pdf" target="_blank">Resume</a>
-  <a class="btn" href="mailto:manumartund@gmail.com">Contact</a>
 </div>
 
-<!-- ABOUT -->
 <section id="about">
   <h2>About</h2>
   <div class="card">
-    Experienced in AWS cloud operations, monitoring, IAM, and incident handling. 
-    Strong background in production support and system reliability.
+    4+ years in cloud operations, monitoring, IAM, and production support.
   </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section id="experience">
-  <h2>Experience</h2>
-
-  <div class="card">
-    <strong>IDFC FIRST Bank</strong><br>
-    Manager – Ops & Tech Support<br>
-    Sep 2023 – Jan 2026
-  </div>
-
-  <div class="card">
-    <strong>ETTL Jaipur</strong><br>
-    Cloud Operations Support<br>
-    Mar 2022 – Aug 2024
-  </div>
-
-  <div class="card">
-    <strong>Mechanical Engineer</strong><br>
-    Jan 2020 – Feb 2022
-  </div>
-</section>
-
-<!-- PROJECTS -->
 <section id="projects">
   <h2>Projects</h2>
-
   <div class="projects">
-    <div class="project">AWS HA Architecture (EC2 + ASG + ALB + RDS)</div>
-    <div class="project">Serverless Automation (Lambda + S3)</div>
-    <div class="project">Monitoring System (CloudWatch)</div>
-    <div class="project">Prometheus + Grafana</div>
-    <div class="project">Docker ECS Deployment</div>
-    <div class="project">Terraform ALB + ASG</div>
+    <div class="project">AWS HA Architecture</div>
+    <div class="project">Serverless Automation</div>
+    <div class="project">Monitoring System</div>
   </div>
 </section>
 
-<!-- ARCHITECTURE -->
+<!-- 🔥 REAL AWS FLOW -->
 <section id="architecture">
   <h2>Cloud Architecture</h2>
 
-  <div class="architecture">
-    <div class="node" onclick="showInfo('ec2')">EC2</div>
-    <div class="node" onclick="showInfo('alb')">ALB</div>
-    <div class="node" onclick="showInfo('rds')">RDS</div>
-    <div class="node" onclick="showInfo('s3')">S3</div>
+  <div class="arch">
+
+    <div class="arch-row">
+      <div class="box" onclick="show('user')">Users</div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="arch-row">
+      <div class="box" onclick="show('alb')">Load Balancer</div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="arch-row">
+      <div class="box" onclick="show('ec2')">EC2 + Auto Scaling</div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="arch-row">
+      <div class="box" onclick="show('rds')">RDS</div>
+      <div class="box" onclick="show('s3')">S3</div>
+    </div>
+
   </div>
 
-  <div id="infoBox" class="info-box">
-    Click on any component to see details
+  <div id="info" class="info">
+    Click components to explore architecture
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <h2>Contact</h2>
   <div class="card">
-    📧 manumartund@gmail.com <br>
-    📱 8619230802 <br><br>
-    🔗 <a href="https://github.com/ManMartand" target="_blank">GitHub</a>
+    📧 manumartund@gmail.com
   </div>
 </section>
 
@@ -273,36 +247,27 @@ footer {
 
 <script>
 const text = ["Cloud Engineer", "AWS Specialist", "DevOps Engineer"];
-let i = 0, j = 0, current = "", isDeleting = false;
+let i=0,j=0,current="",del=false;
 
-function type() {
-  current = text[i];
-  document.getElementById("typing").textContent = current.substring(0, j);
+function type(){
+  current=text[i];
+  document.getElementById("typing").textContent=current.substring(0,j);
 
-  if (!isDeleting && j < current.length) {
-    j++;
-    setTimeout(type, 100);
-  } else if (isDeleting && j > 0) {
-    j--;
-    setTimeout(type, 50);
-  } else {
-    isDeleting = !isDeleting;
-    if (!isDeleting) i = (i + 1) % text.length;
-    setTimeout(type, 800);
-  }
+  if(!del && j<current.length){ j++; setTimeout(type,100); }
+  else if(del && j>0){ j--; setTimeout(type,50); }
+  else{ del=!del; if(!del)i=(i+1)%text.length; setTimeout(type,800); }
 }
-
 type();
 
-function showInfo(component) {
-  const info = {
-    ec2: "EC2 instances handle compute. Auto Scaling ensures high availability.",
-    alb: "ALB distributes traffic across instances.",
-    rds: "RDS provides managed database with backups and scaling.",
-    s3: "S3 stores static files with secure access and lifecycle policies."
+function show(x){
+  const data={
+    user:"Users access application via browser.",
+    alb:"Distributes traffic across instances.",
+    ec2:"Runs application with Auto Scaling.",
+    rds:"Managed database with failover.",
+    s3:"Stores static files and backups."
   };
-
-  document.getElementById("infoBox").innerText = info[component];
+  document.getElementById("info").innerText=data[x];
 }
 </script>
 
