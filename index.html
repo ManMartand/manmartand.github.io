@@ -3,61 +3,83 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Manu Martund | Cloud Engineer</title>
 
 <style>
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: 'Segoe UI', sans-serif;
-  background: #0f0f10;
-  color: #eaeaea;
 }
 
-/* NAV */
+body {
+  background: linear-gradient(135deg, #0f0f10, #1a1a1d);
+  color: #eaeaea;
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
 nav {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(20,20,20,0.7);
   display: flex;
   justify-content: space-between;
   padding: 15px 40px;
-  background: rgba(17,17,17,0.8);
-  backdrop-filter: blur(10px);
-  position: sticky;
-  top: 0;
+  border-bottom: 1px solid #222;
+  z-index: 100;
 }
 
-nav h2 { color: #f5c542; }
-nav a {
-  color: #ccc;
-  margin-left: 20px;
-  text-decoration: none;
+nav h2 {
+  color: #f5c542;
 }
-nav a:hover { color: #f5c542; }
+
+nav a {
+  margin-left: 20px;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #f5c542;
+}
 
 /* HERO */
 .hero {
-  padding: 80px 40px;
-  max-width: 1000px;
+  padding: 100px 40px;
+  max-width: 900px;
 }
 
-.hero h1 { font-size: 40px; }
+.hero h1 {
+  font-size: 42px;
+}
 
-.highlight {
+.typing {
   color: #f5c542;
+  border-right: 2px solid #f5c542;
+  padding-right: 5px;
 }
 
 .hero p {
+  margin-top: 20px;
   color: #aaa;
-  max-width: 600px;
+  line-height: 1.6;
 }
 
-/* BUTTONS */
 .btn {
-  margin-top: 20px;
+  display: inline-block;
+  margin-top: 25px;
   padding: 10px 20px;
+  border-radius: 6px;
   border: 1px solid #f5c542;
   color: #f5c542;
-  border-radius: 6px;
   text-decoration: none;
-  display: inline-block;
+  margin-right: 10px;
+  transition: 0.3s;
 }
 
 .btn:hover {
@@ -65,68 +87,57 @@ nav a:hover { color: #f5c542; }
   color: black;
 }
 
-/* SECTION */
+/* SECTIONS */
 section {
-  padding: 50px 40px;
+  padding: 60px 40px;
   max-width: 1000px;
 }
 
 h2 {
   color: #f5c542;
+  margin-bottom: 20px;
 }
 
 /* CARDS */
 .card {
-  background: #151515;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid #222;
   padding: 20px;
   border-radius: 10px;
+  backdrop-filter: blur(10px);
   margin-bottom: 15px;
-  border: 1px solid #222;
+  transition: 0.3s;
 }
 
 .card:hover {
   border: 1px solid #f5c542;
+  transform: translateY(-3px);
 }
 
 /* PROJECT GRID */
 .projects {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
   gap: 20px;
 }
 
 .project {
-  background: #151515;
   padding: 20px;
   border-radius: 10px;
+  background: rgba(255,255,255,0.04);
   border: 1px solid #222;
   transition: 0.3s;
 }
 
 .project:hover {
-  transform: translateY(-5px);
-  border-color: #f5c542;
+  border: 1px solid #f5c542;
 }
 
-/* TAGS */
-.tag {
-  display: inline-block;
-  background: #1a1a1a;
-  padding: 5px 10px;
-  border-radius: 20px;
-  margin: 5px 5px 0 0;
-  font-size: 12px;
-}
-
-/* CTA */
-.cta {
-  text-align: center;
-  margin-top: 40px;
-}
-
+/* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
+  border-top: 1px solid #222;
   color: #777;
 }
 </style>
@@ -134,87 +145,138 @@ footer {
 
 <body>
 
+<!-- NAV -->
 <nav>
-  <h2>Manu</h2>
+  <h2>Manu Martund</h2>
   <div>
     <a href="#about">About</a>
+    <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
-  <h1>I build <span class="highlight">reliable cloud systems</span></h1>
+  <h1>Hi, I'm Manu 👋</h1>
+  <h1 class="typing" id="typing"></h1>
+
   <p>
-    Cloud & DevOps Engineer with 4+ years of experience in AWS, Terraform, and production support.
-    Focused on stability, scalability, and solving real-world infrastructure issues.
+    Cloud & DevOps Engineer with 4+ years of experience in AWS, Terraform, and production systems.
+    I focus on building reliable infrastructure and solving real-world cloud problems.
   </p>
 
-  <a class="btn" href="Resume_Manu_Martund_Dadhich.pdf">Download Resume</a>
-  <a class="btn" href="mailto:manumartund@gmail.com">Contact Me</a>
+  <a class="btn" href="Resume_Manu_Martund_Dadhich.pdf" target="_blank">Resume</a>
+  <a class="btn" href="mailto:manumartund@gmail.com">Contact</a>
 </div>
 
+<!-- ABOUT -->
 <section id="about">
   <h2>About</h2>
   <div class="card">
-    Experience in AWS (EC2, VPC, IAM, S3, CloudWatch), Terraform, Docker, and monitoring tools.
-    Strong background in production support, incident handling, and system reliability.
+    Experienced in AWS cloud operations, monitoring, IAM, and incident handling. 
+    Strong background in production support and system reliability.
   </div>
 </section>
 
+<!-- EXPERIENCE -->
+<section id="experience">
+  <h2>Experience</h2>
+
+  <div class="card">
+    <strong>IDFC FIRST Bank</strong><br>
+    Manager – Ops & Tech Support<br>
+    Sep 2023 – Jan 2026
+  </div>
+
+  <div class="card">
+    <strong>ETTL Jaipur</strong><br>
+    Cloud Operations Support<br>
+    Mar 2022 – Aug 2024
+  </div>
+
+  <div class="card">
+    <strong>Mechanical Engineer</strong><br>
+    Jan 2020 – Feb 2022
+  </div>
+</section>
+
+<!-- PROJECTS -->
 <section id="projects">
   <h2>Projects</h2>
 
   <div class="projects">
 
     <div class="project">
-      <h3>AWS Highly Available Architecture</h3>
-      <p>Multi-AZ setup using EC2, ALB, Auto Scaling, RDS.</p>
-      <div class="tag">AWS</div>
-      <div class="tag">VPC</div>
-      <div class="tag">CloudWatch</div>
+      <h4>AWS Highly Available Architecture</h4>
+      <p>EC2 + ASG + ALB + RDS + VPC with CloudWatch monitoring.</p>
     </div>
 
     <div class="project">
-      <h3>Serverless Automation</h3>
-      <p>Lambda + S3 based event-driven automation system.</p>
-      <div class="tag">Lambda</div>
-      <div class="tag">S3</div>
+      <h4>Serverless Automation</h4>
+      <p>Lambda + S3 event-driven workflows with cross-region replication.</p>
     </div>
 
     <div class="project">
-      <h3>Monitoring System</h3>
-      <p>CloudWatch dashboards & alerting system.</p>
-      <div class="tag">Monitoring</div>
+      <h4>Monitoring System</h4>
+      <p>CloudWatch dashboards and alerting for system health.</p>
     </div>
 
     <div class="project">
-      <h3>Docker ECS Deployment</h3>
-      <p>Containerized application deployed on ECS.</p>
-      <div class="tag">Docker</div>
-      <div class="tag">ECS</div>
+      <h4>Prometheus + Grafana</h4>
+      <p>System monitoring and visualization stack.</p>
+    </div>
+
+    <div class="project">
+      <h4>Docker ECS Deployment</h4>
+      <p>Containerized app deployed on AWS ECS.</p>
+    </div>
+
+    <div class="project">
+      <h4>Terraform ALB + ASG</h4>
+      <p>Infrastructure as Code for scalable AWS infra.</p>
     </div>
 
   </div>
-
-  <div class="cta">
-    <p>Looking for a Cloud / DevOps Engineer?</p>
-    <a class="btn" href="mailto:manumartund@gmail.com">Let’s Talk</a>
-  </div>
-
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
   <h2>Contact</h2>
   <div class="card">
     📧 manumartund@gmail.com <br>
-    🌐 <a href="https://github.com/ManMartand" target="_blank">GitHub</a>
+    📱 8619230802 <br><br>
+    🔗 <a href="https://github.com/ManMartand" target="_blank">GitHub</a>
   </div>
 </section>
 
 <footer>
   © 2026 Manu Martund
 </footer>
+
+<script>
+const text = ["Cloud Engineer", "AWS Specialist", "DevOps Engineer"];
+let i = 0, j = 0, current = "", isDeleting = false;
+
+function type() {
+  current = text[i];
+  document.getElementById("typing").textContent = current.substring(0, j);
+
+  if (!isDeleting && j < current.length) {
+    j++;
+    setTimeout(type, 100);
+  } else if (isDeleting && j > 0) {
+    j--;
+    setTimeout(type, 50);
+  } else {
+    isDeleting = !isDeleting;
+    if (!isDeleting) i = (i + 1) % text.length;
+    setTimeout(type, 800);
+  }
+}
+
+type();
+</script>
 
 </body>
 </html>
