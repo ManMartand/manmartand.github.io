@@ -72,34 +72,12 @@ nav a:hover { color: #e6b85c; }
 }
 
 /* IMAGE */
-.hero-image {
-  position: relative;
-}
-
 .hero-image img {
   width: 230px;
   height: 230px;
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid #e6b85c;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-  transition: 0.3s;
-}
-
-.hero-image::before {
-  content: "";
-  position: absolute;
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(230,184,92,0.25), transparent);
-  top: -15px;
-  left: -15px;
-  z-index: -1;
-}
-
-.hero-image img:hover {
-  transform: scale(1.05);
 }
 
 /* BUTTON */
@@ -138,6 +116,21 @@ h2 {
   margin-bottom: 15px;
 }
 
+/* EXPERIENCE */
+.exp-item {
+  margin-bottom: 20px;
+}
+
+.exp-item ul {
+  margin-top: 10px;
+  padding-left: 18px;
+}
+
+.exp-item li {
+  margin-bottom: 8px;
+  color: #cfc7bb;
+}
+
 /* PROJECTS */
 .projects {
   display: grid;
@@ -152,55 +145,14 @@ h2 {
   border-radius: 10px;
 }
 
-/* ARCHITECTURE */
-.arch-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
-  text-align: center;
-}
-
-.node {
-  padding: 20px;
-  border-radius: 12px;
-  background: rgba(255, 248, 235, 0.05);
-  border: 1px solid #3a342f;
-  cursor: pointer;
-  transition: 0.3s;
-  position: relative;
-  font-size: 30px;
-}
-
-.node span {
-  display: block;
-  margin-top: 10px;
-  font-size: 14px;
-  color: #d6cec2;
-}
-
-.node:hover {
-  transform: translateY(-5px) scale(1.05);
-  border: 1px solid #e6b85c;
-}
-
-.node::after {
-  content: attr(data-title);
-  position: absolute;
-  bottom: -25px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #2a2623;
+.project a {
   color: #e6b85c;
-  padding: 4px 8px;
-  font-size: 12px;
-  border-radius: 4px;
-  opacity: 0;
-  transition: 0.3s;
+  text-decoration: none;
+  font-size: 14px;
 }
 
-.node:hover::after {
-  opacity: 1;
+.project a:hover {
+  text-decoration: underline;
 }
 
 /* FOOTER */
@@ -222,11 +174,6 @@ footer {
     width: 160px;
     height: 160px;
   }
-
-  .hero-image::before {
-    width: 190px;
-    height: 190px;
-  }
 }
 </style>
 </head>
@@ -237,8 +184,8 @@ footer {
   <h2>Manu Martund</h2>
   <div>
     <a href="#about">About</a>
+    <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
-    <a href="#architecture">Architecture</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
@@ -249,7 +196,7 @@ footer {
     <h1 class="typing" id="typing"></h1>
 
     <p>
-      Cloud & DevOps Engineer with 4+ years of experience in AWS, Terraform, and production systems.
+      Cloud & DevOps Engineer with 4+ years of experience in AWS cloud operations, production support, and infrastructure monitoring. Skilled in managing live environments, handling incidents, and ensuring system reliability.
     </p>
 
     <a class="btn" href="Resume_Manu_Martund_Dadhich.pdf" target="_blank">Resume</a>
@@ -264,7 +211,35 @@ footer {
 <section id="about">
   <h2>About</h2>
   <div class="card">
-    Experienced in AWS cloud operations, monitoring, IAM, and incident handling.
+    I’m a Cloud & DevOps Engineer with hands-on experience managing AWS-based production systems. I’ve worked extensively on monitoring, troubleshooting, and maintaining high availability in real-world environments. I focus on building stable systems, improving reliability, and gradually moving towards automation using Terraform and container-based deployments.
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+
+  <div class="card exp-item">
+    <strong>IDFC FIRST Bank</strong><br>
+    Manager – Operations & Tech Support<br>
+    <small>Sep 2023 – Jan 2026</small>
+
+    <ul>
+      <li>Handled production incidents and reduced downtime using CloudWatch monitoring and alerts</li>
+      <li>Managed AWS infrastructure including EC2, IAM, VPC, and S3 in live environments</li>
+      <li>Improved system reliability by proactive monitoring and troubleshooting</li>
+    </ul>
+  </div>
+
+  <div class="card exp-item">
+    <strong>ETTL Jaipur</strong><br>
+    Cloud Operations Support<br>
+    <small>Mar 2022 – Aug 2024</small>
+
+    <ul>
+      <li>Supported cloud-based applications and resolved infrastructure issues</li>
+      <li>Monitored system performance and handled L1/L2 incidents</li>
+      <li>Worked with Linux systems and AWS services for operational support</li>
+    </ul>
   </div>
 </section>
 
@@ -272,25 +247,25 @@ footer {
   <h2>Projects</h2>
 
   <div class="projects">
-    <div class="project">AWS HA Architecture</div>
-    <div class="project">Serverless Automation</div>
-    <div class="project">Monitoring System</div>
-  </div>
-</section>
 
-<section id="architecture">
-  <h2>Cloud Architecture</h2>
+    <div class="project">
+      <h4>AWS Highly Available Architecture</h4>
+      <p>EC2 + ASG + ALB + RDS deployed across multiple AZs</p>
+      <a href="https://github.com/ManMartand/terraform-aws-alb-asg" target="_blank">View Code</a>
+    </div>
 
-  <div class="arch-grid">
-    <div class="node" onclick="showInfo('user')" data-title="Users">🌐<span>Users</span></div>
-    <div class="node" onclick="showInfo('alb')" data-title="Load Balancer">⚖️<span>ALB</span></div>
-    <div class="node" onclick="showInfo('ec2')" data-title="Compute">🖥️<span>EC2</span></div>
-    <div class="node" onclick="showInfo('rds')" data-title="Database">🗄️<span>RDS</span></div>
-    <div class="node" onclick="showInfo('s3')" data-title="Storage">📦<span>S3</span></div>
-  </div>
+    <div class="project">
+      <h4>Serverless Automation</h4>
+      <p>Lambda + S3 event-driven workflows</p>
+      <a href="https://github.com/ManMartand" target="_blank">View Code</a>
+    </div>
 
-  <div id="info" class="card">
-    Click any component to explore
+    <div class="project">
+      <h4>Monitoring System</h4>
+      <p>CloudWatch dashboards and alerting</p>
+      <a href="https://github.com/ManMartand/monitoring-prometheus-grafana" target="_blank">View Code</a>
+    </div>
+
   </div>
 </section>
 
@@ -330,18 +305,6 @@ function type() {
 }
 
 type();
-
-function showInfo(component) {
-  const info = {
-    user: "Users access via browser",
-    alb: "Load balancer distributes traffic",
-    ec2: "EC2 runs application with scaling",
-    rds: "Managed database",
-    s3: "Storage for static data"
-  };
-
-  document.getElementById("info").innerText = info[component];
-}
 </script>
 
 </body>
