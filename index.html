@@ -17,7 +17,8 @@
 body {
   background: linear-gradient(135deg, #0f0f10, #1a1a1d);
   color: #eaeaea;
-  scroll-behavior: smooth;
+  max-width: 1100px;
+  margin: auto;
 }
 
 /* NAVBAR */
@@ -25,12 +26,11 @@ nav {
   position: sticky;
   top: 0;
   backdrop-filter: blur(10px);
-  background: rgba(20,20,20,0.7);
+  background: rgba(20,20,20,0.8);
   display: flex;
   justify-content: space-between;
-  padding: 15px 40px;
+  padding: 15px 20px;
   border-bottom: 1px solid #222;
-  z-index: 100;
 }
 
 nav h2 {
@@ -41,7 +41,6 @@ nav a {
   margin-left: 20px;
   color: #ccc;
   text-decoration: none;
-  font-size: 14px;
 }
 
 nav a:hover {
@@ -50,12 +49,11 @@ nav a:hover {
 
 /* HERO */
 .hero {
-  padding: 100px 40px;
-  max-width: 900px;
+  padding: 80px 20px;
 }
 
 .hero h1 {
-  font-size: 42px;
+  font-size: 40px;
 }
 
 .typing {
@@ -72,8 +70,8 @@ nav a:hover {
 
 .btn {
   display: inline-block;
-  margin-top: 25px;
-  padding: 10px 20px;
+  margin-top: 20px;
+  padding: 10px 18px;
   border-radius: 6px;
   border: 1px solid #f5c542;
   color: #f5c542;
@@ -89,8 +87,7 @@ nav a:hover {
 
 /* SECTIONS */
 section {
-  padding: 60px 40px;
-  max-width: 1000px;
+  padding: 50px 20px;
 }
 
 h2 {
@@ -104,14 +101,7 @@ h2 {
   border: 1px solid #222;
   padding: 20px;
   border-radius: 10px;
-  backdrop-filter: blur(10px);
   margin-bottom: 15px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  border: 1px solid #f5c542;
-  transform: translateY(-3px);
 }
 
 /* PROJECT GRID */
@@ -133,6 +123,41 @@ h2 {
   border: 1px solid #f5c542;
 }
 
+/* ARCHITECTURE */
+.architecture {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.node {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.node:hover {
+  border: 1px solid #f5c542;
+  transform: scale(1.05);
+}
+
+.info-box {
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid #222;
+}
+
 /* FOOTER */
 footer {
   text-align: center;
@@ -152,6 +177,7 @@ footer {
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
+    <a href="#architecture">Architecture</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
@@ -206,37 +232,28 @@ footer {
   <h2>Projects</h2>
 
   <div class="projects">
+    <div class="project">AWS HA Architecture (EC2 + ASG + ALB + RDS)</div>
+    <div class="project">Serverless Automation (Lambda + S3)</div>
+    <div class="project">Monitoring System (CloudWatch)</div>
+    <div class="project">Prometheus + Grafana</div>
+    <div class="project">Docker ECS Deployment</div>
+    <div class="project">Terraform ALB + ASG</div>
+  </div>
+</section>
 
-    <div class="project">
-      <h4>AWS Highly Available Architecture</h4>
-      <p>EC2 + ASG + ALB + RDS + VPC with CloudWatch monitoring.</p>
-    </div>
+<!-- ARCHITECTURE -->
+<section id="architecture">
+  <h2>Cloud Architecture</h2>
 
-    <div class="project">
-      <h4>Serverless Automation</h4>
-      <p>Lambda + S3 event-driven workflows with cross-region replication.</p>
-    </div>
+  <div class="architecture">
+    <div class="node" onclick="showInfo('ec2')">EC2</div>
+    <div class="node" onclick="showInfo('alb')">ALB</div>
+    <div class="node" onclick="showInfo('rds')">RDS</div>
+    <div class="node" onclick="showInfo('s3')">S3</div>
+  </div>
 
-    <div class="project">
-      <h4>Monitoring System</h4>
-      <p>CloudWatch dashboards and alerting for system health.</p>
-    </div>
-
-    <div class="project">
-      <h4>Prometheus + Grafana</h4>
-      <p>System monitoring and visualization stack.</p>
-    </div>
-
-    <div class="project">
-      <h4>Docker ECS Deployment</h4>
-      <p>Containerized app deployed on AWS ECS.</p>
-    </div>
-
-    <div class="project">
-      <h4>Terraform ALB + ASG</h4>
-      <p>Infrastructure as Code for scalable AWS infra.</p>
-    </div>
-
+  <div id="infoBox" class="info-box">
+    Click on any component to see details
   </div>
 </section>
 
@@ -276,6 +293,17 @@ function type() {
 }
 
 type();
+
+function showInfo(component) {
+  const info = {
+    ec2: "EC2 instances handle compute. Auto Scaling ensures high availability.",
+    alb: "ALB distributes traffic across instances.",
+    rds: "RDS provides managed database with backups and scaling.",
+    s3: "S3 stores static files with secure access and lifecycle policies."
+  };
+
+  document.getElementById("infoBox").innerText = info[component];
+}
 </script>
 
 </body>
