@@ -1,298 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Manu Martund | Cloud Engineer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manu Martund | Cloud Engineer</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #0f0f10;
-      color: #eaeaea;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f0f10;
+  color: #eaeaea;
+}
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      padding: 15px 40px;
-      background: #111;
-      border-bottom: 1px solid #222;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: rgba(17,17,17,0.8);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+}
 
-    nav h2 {
-      color: #f5c542;
-      margin: 0;
-      font-size: 18px;
-    }
+nav h2 { color: #f5c542; }
+nav a {
+  color: #ccc;
+  margin-left: 20px;
+  text-decoration: none;
+}
+nav a:hover { color: #f5c542; }
 
-    nav a {
-      color: #ccc;
-      margin-left: 20px;
-      text-decoration: none;
-      font-size: 14px;
-    }
+/* HERO */
+.hero {
+  padding: 80px 40px;
+  max-width: 1000px;
+}
 
-    nav a:hover {
-      color: #f5c542;
-    }
+.hero h1 { font-size: 40px; }
 
-    .hero {
-      padding: 80px 40px;
-      max-width: 900px;
-    }
+.highlight {
+  color: #f5c542;
+}
 
-    .hero h1 {
-      font-size: 38px;
-      margin: 0;
-    }
+.hero p {
+  color: #aaa;
+  max-width: 600px;
+}
 
-    .typing {
-      color: #f5c542;
-      font-weight: bold;
-      border-right: 2px solid #f5c542;
-      padding-right: 5px;
-      white-space: nowrap;
-      overflow: hidden;
-    }
+/* BUTTONS */
+.btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 1px solid #f5c542;
+  color: #f5c542;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+}
 
-    .hero p {
-      margin-top: 15px;
-      color: #aaa;
-      font-size: 16px;
-      line-height: 1.6;
-    }
+.btn:hover {
+  background: #f5c542;
+  color: black;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      border: 1px solid #f5c542;
-      color: #f5c542;
-      text-decoration: none;
-      border-radius: 6px;
-      margin-right: 10px;
-      transition: 0.3s;
-    }
+/* SECTION */
+section {
+  padding: 50px 40px;
+  max-width: 1000px;
+}
 
-    .btn:hover {
-      background: #f5c542;
-      color: black;
-    }
+h2 {
+  color: #f5c542;
+}
 
-    section {
-      padding: 50px 40px;
-      max-width: 900px;
-    }
+/* CARDS */
+.card {
+  background: #151515;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #222;
+}
 
-    h2 {
-      font-size: 20px;
-      margin-bottom: 20px;
-      color: #f5c542;
-    }
+.card:hover {
+  border: 1px solid #f5c542;
+}
 
-    h3 {
-      color: #aaa;
-      margin-top: 25px;
-      margin-bottom: 10px;
-    }
+/* PROJECT GRID */
+.projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
 
-    .card {
-      background: #151515;
-      padding: 20px;
-      border-radius: 8px;
-      border: 1px solid #222;
-      margin-bottom: 15px;
-      transition: 0.3s;
-    }
+.project {
+  background: #151515;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #222;
+  transition: 0.3s;
+}
 
-    .card:hover {
-      border: 1px solid #f5c542;
-      box-shadow: 0 5px 20px rgba(245, 197, 66, 0.15);
-    }
+.project:hover {
+  transform: translateY(-5px);
+  border-color: #f5c542;
+}
 
-    .project {
-      background: #151515;
-      padding: 18px;
-      border-radius: 8px;
-      border: 1px solid #222;
-      margin-bottom: 15px;
-      transition: all 0.3s ease;
-    }
+/* TAGS */
+.tag {
+  display: inline-block;
+  background: #1a1a1a;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin: 5px 5px 0 0;
+  font-size: 12px;
+}
 
-    .project:hover {
-      transform: translateY(-5px);
-      border: 1px solid #f5c542;
-      box-shadow: 0 5px 20px rgba(245, 197, 66, 0.15);
-    }
+/* CTA */
+.cta {
+  text-align: center;
+  margin-top: 40px;
+}
 
-    /* Skills */
-    .skills-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .skill-tag {
-      background: #1a1a1a;
-      padding: 8px 12px;
-      border-radius: 20px;
-      font-size: 13px;
-      border: 1px solid #333;
-      transition: 0.3s;
-    }
-
-    .skill-tag:hover {
-      border-color: #f5c542;
-      color: #f5c542;
-    }
-
-    /* Timeline */
-    .timeline {
-      border-left: 2px solid #222;
-      padding-left: 20px;
-    }
-
-    .timeline-item {
-      margin-bottom: 20px;
-      position: relative;
-    }
-
-    .timeline-item::before {
-      content: "";
-      width: 10px;
-      height: 10px;
-      background: #f5c542;
-      border-radius: 50%;
-      position: absolute;
-      left: -26px;
-      top: 5px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 13px;
-      color: #777;
-      border-top: 1px solid #222;
-    }
-
-    a {
-      color: #f5c542;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+}
+</style>
 </head>
 
 <body>
 
 <nav>
-  <h2>Manu Martund</h2>
+  <h2>Manu</h2>
   <div>
     <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
 <div class="hero">
-  <h1>Hi, I’m Manu Martund</h1>
-  <h1 class="typing" id="typing"></h1>
-
+  <h1>I build <span class="highlight">reliable cloud systems</span></h1>
   <p>
-    I build reliable cloud systems, solve production issues, and continuously improve infrastructure performance.
+    Cloud & DevOps Engineer with 4+ years of experience in AWS, Terraform, and production support.
+    Focused on stability, scalability, and solving real-world infrastructure issues.
   </p>
 
-  <a class="btn" href="Resume_Manu_Martund_Dadhich.pdf" target="_blank">Download Resume</a>
-  <a class="btn" href="mailto:manumartund@gmail.com">Hire Me</a>
+  <a class="btn" href="Resume_Manu_Martund_Dadhich.pdf">Download Resume</a>
+  <a class="btn" href="mailto:manumartund@gmail.com">Contact Me</a>
 </div>
 
 <section id="about">
   <h2>About</h2>
   <div class="card">
-    Cloud & DevOps Engineer with 4+ years of experience in AWS cloud operations, production support, and infrastructure monitoring. Focused on building reliable systems and solving real-world infrastructure issues.
-  </div>
-</section>
-
-<section id="experience">
-  <h2>Experience</h2>
-  <div class="timeline">
-
-    <div class="timeline-item">
-      <strong>IDFC FIRST Bank</strong><br>
-      Manager – Operations & Tech Support<br>
-      <small>Sep 2023 – Jan 2026</small>
-    </div>
-
-    <div class="timeline-item">
-      <strong>ETTL Jaipur</strong><br>
-      Cloud Operations Support<br>
-      <small>Mar 2022 – Aug 2024</small>
-    </div>
-
-    <div class="timeline-item">
-      <strong>Mechanical Engineer</strong><br>
-      <small>Jan 2020 – Feb 2022</small>
-    </div>
-
-  </div>
-</section>
-
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skills-container">
-    <span class="skill-tag">AWS</span>
-    <span class="skill-tag">EC2</span>
-    <span class="skill-tag">S3</span>
-    <span class="skill-tag">IAM</span>
-    <span class="skill-tag">VPC</span>
-    <span class="skill-tag">CloudWatch</span>
-    <span class="skill-tag">Terraform</span>
-    <span class="skill-tag">Docker</span>
-    <span class="skill-tag">Kubernetes</span>
-    <span class="skill-tag">Linux</span>
-    <span class="skill-tag">CI/CD</span>
-    <span class="skill-tag">Monitoring</span>
+    Experience in AWS (EC2, VPC, IAM, S3, CloudWatch), Terraform, Docker, and monitoring tools.
+    Strong background in production support, incident handling, and system reliability.
   </div>
 </section>
 
 <section id="projects">
   <h2>Projects</h2>
 
-  <h3>🚀 Featured Projects</h3>
+  <div class="projects">
 
-  <div class="project">
-    <h4>Highly Available Web Application on AWS</h4>
-    <p>Built using EC2, Auto Scaling, ALB, RDS, and VPC with CloudWatch monitoring for high availability.</p>
+    <div class="project">
+      <h3>AWS Highly Available Architecture</h3>
+      <p>Multi-AZ setup using EC2, ALB, Auto Scaling, RDS.</p>
+      <div class="tag">AWS</div>
+      <div class="tag">VPC</div>
+      <div class="tag">CloudWatch</div>
+    </div>
+
+    <div class="project">
+      <h3>Serverless Automation</h3>
+      <p>Lambda + S3 based event-driven automation system.</p>
+      <div class="tag">Lambda</div>
+      <div class="tag">S3</div>
+    </div>
+
+    <div class="project">
+      <h3>Monitoring System</h3>
+      <p>CloudWatch dashboards & alerting system.</p>
+      <div class="tag">Monitoring</div>
+    </div>
+
+    <div class="project">
+      <h3>Docker ECS Deployment</h3>
+      <p>Containerized application deployed on ECS.</p>
+      <div class="tag">Docker</div>
+      <div class="tag">ECS</div>
+    </div>
+
   </div>
 
-  <div class="project">
-    <h4>Serverless Automation (Lambda + S3)</h4>
-    <p>Implemented event-driven workflows with Lambda, S3 triggers, and cross-region replication.</p>
+  <div class="cta">
+    <p>Looking for a Cloud / DevOps Engineer?</p>
+    <a class="btn" href="mailto:manumartund@gmail.com">Let’s Talk</a>
   </div>
-
-  <div class="project">
-    <h4>Monitoring & Alerting System</h4>
-    <p>Designed dashboards and alerts using CloudWatch to improve uptime and incident response.</p>
-  </div>
-
-  <h3>⚙️ Other Projects</h3>
-
-  <div class="project">Monitoring with Prometheus & Grafana</div>
-  <div class="project">Docker ECS Deployment</div>
-  <div class="project">Terraform AWS ALB + ASG</div>
-  <div class="project">AWS Cloud Ops Project</div>
-  <div class="project">Room Environment Alert (IoT)</div>
-  <div class="project">AMI Image Automation</div>
 
 </section>
 
@@ -300,39 +208,13 @@
   <h2>Contact</h2>
   <div class="card">
     📧 manumartund@gmail.com <br>
-    📱 8619230802 <br>
-    🌐 <a href="https://github.com/ManMartand" target="_blank">GitHub Profile</a>
+    🌐 <a href="https://github.com/ManMartand" target="_blank">GitHub</a>
   </div>
 </section>
 
 <footer>
   © 2026 Manu Martund
 </footer>
-
-<script>
-  const text = ["Cloud Engineer", "AWS Specialist", "DevOps Enthusiast"];
-  let i = 0, j = 0, current = "", isDeleting = false;
-
-  function type() {
-    current = text[i];
-    document.getElementById("typing").textContent =
-      current.substring(0, j);
-
-    if (!isDeleting && j < current.length) {
-      j++;
-      setTimeout(type, 100);
-    } else if (isDeleting && j > 0) {
-      j--;
-      setTimeout(type, 50);
-    } else {
-      isDeleting = !isDeleting;
-      if (!isDeleting) i = (i + 1) % text.length;
-      setTimeout(type, 800);
-    }
-  }
-
-  type();
-</script>
 
 </body>
 </html>
