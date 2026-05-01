@@ -15,8 +15,8 @@
 }
 
 body {
-  background: linear-gradient(135deg, #0f0f10, #1a1a1d);
-  color: #eaeaea;
+  background: linear-gradient(135deg, #1c1a17, #2a2623);
+  color: #f1ede6;
   max-width: 1100px;
   margin: auto;
 }
@@ -25,53 +25,97 @@ body {
 nav {
   position: sticky;
   top: 0;
-  background: rgba(20,20,20,0.9);
+  background: rgba(40, 36, 32, 0.9);
   display: flex;
   justify-content: space-between;
   padding: 15px 20px;
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid #3a342f;
 }
 
-nav h2 { color: #f5c542; }
+nav h2 { color: #e6b85c; }
 
 nav a {
   margin-left: 20px;
-  color: #ccc;
+  color: #d6cec2;
   text-decoration: none;
 }
 
-nav a:hover { color: #f5c542; }
+nav a:hover { color: #e6b85c; }
 
 /* HERO */
 .hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 80px 20px;
+  gap: 50px;
 }
 
-.hero h1 { font-size: 40px; }
+.hero-text {
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: 40px;
+}
 
 .typing {
-  color: #f5c542;
-  border-right: 2px solid #f5c542;
+  color: #e6b85c;
+  border-right: 2px solid #e6b85c;
   padding-right: 5px;
 }
 
 .hero p {
   margin-top: 20px;
-  color: #aaa;
+  color: #cfc7bb;
+  line-height: 1.6;
 }
 
+/* IMAGE */
+.hero-image {
+  position: relative;
+}
+
+.hero-image img {
+  width: 230px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #e6b85c;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  transition: 0.3s;
+}
+
+.hero-image::before {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(230,184,92,0.25), transparent);
+  top: -15px;
+  left: -15px;
+  z-index: -1;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+}
+
+/* BUTTON */
 .btn {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 18px;
-  border: 1px solid #f5c542;
-  color: #f5c542;
+  border: 1px solid #e6b85c;
+  color: #e6b85c;
   border-radius: 6px;
   text-decoration: none;
+  margin-right: 10px;
 }
 
 .btn:hover {
-  background: #f5c542;
+  background: #e6b85c;
   color: black;
 }
 
@@ -81,16 +125,16 @@ section {
 }
 
 h2 {
-  color: #f5c542;
+  color: #e6b85c;
   margin-bottom: 20px;
 }
 
 /* CARD */
 .card {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 248, 235, 0.04);
+  border: 1px solid #3a342f;
   padding: 20px;
   border-radius: 10px;
-  border: 1px solid #222;
   margin-bottom: 15px;
 }
 
@@ -102,59 +146,87 @@ h2 {
 }
 
 .project {
+  background: rgba(255, 248, 235, 0.03);
+  border: 1px solid #3a342f;
   padding: 20px;
   border-radius: 10px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid #222;
 }
 
-/* 🔥 AWS STYLE ARCHITECTURE */
-.arch {
+/* ARCHITECTURE */
+.arch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
   text-align: center;
 }
 
-.arch-row {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin: 20px 0;
-}
-
-.box {
-  padding: 15px 25px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid #222;
-  border-radius: 8px;
+.node {
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255, 248, 235, 0.05);
+  border: 1px solid #3a342f;
   cursor: pointer;
   transition: 0.3s;
-  min-width: 140px;
+  position: relative;
+  font-size: 30px;
 }
 
-.box:hover {
-  border: 1px solid #f5c542;
-  transform: scale(1.05);
+.node span {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #d6cec2;
 }
 
-.line {
-  height: 30px;
-  width: 2px;
-  background: #444;
-  margin: auto;
+.node:hover {
+  transform: translateY(-5px) scale(1.05);
+  border: 1px solid #e6b85c;
 }
 
-.info {
-  margin-top: 25px;
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid #222;
+.node::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2a2623;
+  color: #e6b85c;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.node:hover::after {
+  opacity: 1;
 }
 
 /* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
-  border-top: 1px solid #222;
-  color: #777;
+  border-top: 1px solid #3a342f;
+  color: #aaa;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-image img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .hero-image::before {
+    width: 190px;
+    height: 190px;
+  }
 }
 </style>
 </head>
@@ -172,25 +244,33 @@ footer {
 </nav>
 
 <div class="hero">
-  <h1>Hi, I'm Manu 👋</h1>
-  <h1 class="typing" id="typing"></h1>
+  <div class="hero-text">
+    <h1>Hi, I'm Manu 👋</h1>
+    <h1 class="typing" id="typing"></h1>
 
-  <p>
-    Cloud Engineer focused on AWS, Terraform, and production systems.
-  </p>
+    <p>
+      Cloud & DevOps Engineer with 4+ years of experience in AWS, Terraform, and production systems.
+    </p>
 
-  <a class="btn" href="Resume_Manu_Martund_Dadhich.pdf" target="_blank">Resume</a>
+    <a class="btn" href="Resume_Manu_Martund_Dadhich.pdf" target="_blank">Resume</a>
+    <a class="btn" href="mailto:manumartund@gmail.com">Contact</a>
+  </div>
+
+  <div class="hero-image">
+    <img src="resume.jpeg" alt="Manu Martund">
+  </div>
 </div>
 
 <section id="about">
   <h2>About</h2>
   <div class="card">
-    4+ years in cloud operations, monitoring, IAM, and production support.
+    Experienced in AWS cloud operations, monitoring, IAM, and incident handling.
   </div>
 </section>
 
 <section id="projects">
   <h2>Projects</h2>
+
   <div class="projects">
     <div class="project">AWS HA Architecture</div>
     <div class="project">Serverless Automation</div>
@@ -198,39 +278,19 @@ footer {
   </div>
 </section>
 
-<!-- 🔥 REAL AWS FLOW -->
 <section id="architecture">
   <h2>Cloud Architecture</h2>
 
-  <div class="arch">
-
-    <div class="arch-row">
-      <div class="box" onclick="show('user')">Users</div>
-    </div>
-
-    <div class="line"></div>
-
-    <div class="arch-row">
-      <div class="box" onclick="show('alb')">Load Balancer</div>
-    </div>
-
-    <div class="line"></div>
-
-    <div class="arch-row">
-      <div class="box" onclick="show('ec2')">EC2 + Auto Scaling</div>
-    </div>
-
-    <div class="line"></div>
-
-    <div class="arch-row">
-      <div class="box" onclick="show('rds')">RDS</div>
-      <div class="box" onclick="show('s3')">S3</div>
-    </div>
-
+  <div class="arch-grid">
+    <div class="node" onclick="showInfo('user')" data-title="Users">🌐<span>Users</span></div>
+    <div class="node" onclick="showInfo('alb')" data-title="Load Balancer">⚖️<span>ALB</span></div>
+    <div class="node" onclick="showInfo('ec2')" data-title="Compute">🖥️<span>EC2</span></div>
+    <div class="node" onclick="showInfo('rds')" data-title="Database">🗄️<span>RDS</span></div>
+    <div class="node" onclick="showInfo('s3')" data-title="Storage">📦<span>S3</span></div>
   </div>
 
-  <div id="info" class="info">
-    Click components to explore architecture
+  <div id="info" class="card">
+    Click any component to explore
   </div>
 </section>
 
@@ -238,43 +298,51 @@ footer {
   <h2>Contact</h2>
 
   <div class="card">
-    <p>📧 Email: <a href="mailto:manumartund@gmail.com">manumartund@gmail.com</a></p>
-    <p>📱 Phone: <a href="tel:+918619230802">+91 9970130735</a></p>
-    <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/mmd-manu-martund-clouder" target="_blank">View Profile</a></p>
-    <p>💻 GitHub: <a href="https://github.com/ManMartand" target="_blank">github.com/ManMartand</a></p>
+    📧 manumartund@gmail.com <br>
+    📱 8619230802 <br>
+    🔗 <a href="https://github.com/ManMartand" target="_blank">GitHub</a>
   </div>
-
 </section>
-  
+
 <footer>
   © 2026 Manu Martund
 </footer>
 
 <script>
 const text = ["Cloud Engineer", "AWS Specialist", "DevOps Engineer"];
-let i=0,j=0,current="",del=false;
+let i = 0, j = 0, current = "", isDeleting = false;
 
-function type(){
-  current=text[i];
-  document.getElementById("typing").textContent=current.substring(0,j);
+function type() {
+  current = text[i];
+  document.getElementById("typing").textContent = current.substring(0, j);
 
-  if(!del && j<current.length){ j++; setTimeout(type,100); }
-  else if(del && j>0){ j--; setTimeout(type,50); }
-  else{ del=!del; if(!del)i=(i+1)%text.length; setTimeout(type,800); }
+  if (!isDeleting && j < current.length) {
+    j++;
+    setTimeout(type, 100);
+  } else if (isDeleting && j > 0) {
+    j--;
+    setTimeout(type, 50);
+  } else {
+    isDeleting = !isDeleting;
+    if (!isDeleting) i = (i + 1) % text.length;
+    setTimeout(type, 800);
+  }
 }
+
 type();
 
-function show(x){
-  const data={
-    user:"Users access application via browser.",
-    alb:"Distributes traffic across instances.",
-    ec2:"Runs application with Auto Scaling.",
-    rds:"Managed database with failover.",
-    s3:"Stores static files and backups."
+function showInfo(component) {
+  const info = {
+    user: "Users access via browser",
+    alb: "Load balancer distributes traffic",
+    ec2: "EC2 runs application with scaling",
+    rds: "Managed database",
+    s3: "Storage for static data"
   };
-  document.getElementById("info").innerText=data[x];
+
+  document.getElementById("info").innerText = info[component];
 }
 </script>
 
 </body>
-</html>
+</html>F
