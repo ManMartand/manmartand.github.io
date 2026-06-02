@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Manu Martund - Cloud Operations and Support Engineer focused on AWS, Linux, monitoring, incident management, application support, and infrastructure support.">
 
-<title>Manu Martund | Cloud Engineer</title>
+<title>Manu Martund | Cloud Operations & Support Engineer</title>
 
 <style>
 * {
@@ -12,6 +13,10 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -25,22 +30,30 @@ body {
 nav {
   position: sticky;
   top: 0;
-  background: rgba(40, 36, 32, 0.9);
+  z-index: 10;
+  background: rgba(40, 36, 32, 0.95);
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 15px 20px;
   border-bottom: 1px solid #3a342f;
 }
 
-nav h2 { color: #e6b85c; }
+nav h2 {
+  color: #e6b85c;
+  font-size: 22px;
+}
 
 nav a {
   margin-left: 20px;
   color: #d6cec2;
   text-decoration: none;
+  font-size: 15px;
 }
 
-nav a:hover { color: #e6b85c; }
+nav a:hover {
+  color: #e6b85c;
+}
 
 /* HERO */
 .hero {
@@ -52,23 +65,26 @@ nav a:hover { color: #e6b85c; }
 }
 
 .hero-text {
-  max-width: 600px;
+  max-width: 650px;
 }
 
 .hero h1 {
-  font-size: 40px;
+  font-size: 42px;
+  line-height: 1.2;
 }
 
 .typing {
   color: #e6b85c;
   border-right: 2px solid #e6b85c;
   padding-right: 5px;
+  min-height: 55px;
 }
 
 .hero p {
   margin-top: 20px;
   color: #cfc7bb;
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 17px;
 }
 
 /* IMAGE */
@@ -83,13 +99,14 @@ nav a:hover { color: #e6b85c; }
 /* BUTTON */
 .btn {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 22px;
   padding: 10px 18px;
   border: 1px solid #e6b85c;
   color: #e6b85c;
   border-radius: 6px;
   text-decoration: none;
   margin-right: 10px;
+  transition: 0.2s ease;
 }
 
 .btn:hover {
@@ -114,6 +131,39 @@ h2 {
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+.card strong {
+  color: #f7e0ac;
+}
+
+small {
+  color: #aaa;
+}
+
+/* SKILLS */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.skill-card {
+  background: rgba(255, 248, 235, 0.035);
+  border: 1px solid #3a342f;
+  padding: 18px;
+  border-radius: 10px;
+}
+
+.skill-card h4 {
+  color: #f7e0ac;
+  margin-bottom: 8px;
+}
+
+.skill-card p {
+  color: #cfc7bb;
+  line-height: 1.6;
 }
 
 /* EXPERIENCE */
@@ -134,7 +184,7 @@ h2 {
 /* PROJECTS */
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
 
@@ -143,15 +193,28 @@ h2 {
   border: 1px solid #3a342f;
   padding: 20px;
   border-radius: 10px;
+  line-height: 1.6;
 }
 
-.project a {
+.project h4 {
+  color: #f7e0ac;
+  margin-bottom: 8px;
+}
+
+.project p {
+  color: #cfc7bb;
+  margin-bottom: 12px;
+}
+
+.project a,
+.card a {
   color: #e6b85c;
   text-decoration: none;
   font-size: 14px;
 }
 
-.project a:hover {
+.project a:hover,
+.card a:hover {
   text-decoration: underline;
 }
 
@@ -165,9 +228,28 @@ footer {
 
 /* MOBILE */
 @media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav a {
+    margin: 0 8px;
+    font-size: 14px;
+  }
+
   .hero {
     flex-direction: column-reverse;
     text-align: center;
+    padding: 55px 20px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .typing {
+    min-height: 42px;
   }
 
   .hero-image img {
@@ -184,6 +266,7 @@ footer {
   <h2>Manu Martund</h2>
   <div>
     <a href="#about">About</a>
+    <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
@@ -196,22 +279,47 @@ footer {
     <h1 class="typing" id="typing"></h1>
 
     <p>
-      Cloud & DevOps Engineer with 4+ years of experience in AWS cloud operations, production support, and infrastructure monitoring. Skilled in managing live environments, handling incidents, and ensuring system reliability.
+      Cloud Operations and Support professional focused on AWS, Linux, monitoring, incident management, application support, access validation, SLA tracking, RCA support, and infrastructure troubleshooting.
     </p>
-
-    <a class="btn" href="Resume_Manu_Martund_Dadhich.pdf" target="_blank">Resume</a>
-    <a class="btn" href="mailto:manumartund@gmail.com">Contact</a>
+    
+    <a class="btn" href="Resume_Manu_Martund_Dadhich.pdf" target="_blank" rel="noopener noreferrer">View Resume</a>
+    <a class="btn" href="mailto:manumartund98@gmail.com">Contact Me</a>
   </div>
 
   <div class="hero-image">
-    <img src="resume.jpeg" alt="Manu Martund">
+    <img src="resume.jpeg" alt="Manu Martund profile photo">
   </div>
 </div>
 
 <section id="about">
   <h2>About</h2>
   <div class="card">
-    I’m a Cloud & DevOps Engineer with hands-on experience managing AWS-based production systems. I’ve worked extensively on monitoring, troubleshooting, and maintaining high availability in real-world environments. I focus on building stable systems, improving reliability, and gradually moving towards automation using Terraform and container-based deployments.
+    I am a Cloud Operations and Support professional with experience in AWS, Linux, application support, incident coordination, SLA tracking, monitoring checks, access validation, documentation, and production support activities. I am focused on Cloud Support, AWS Support, Application Support, Linux Support, and Infrastructure Support roles.
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h4>Cloud & AWS</h4>
+      <p>EC2, S3, IAM, VPC, CloudWatch, basic Lambda, basic RDS, access checks, resource monitoring, and troubleshooting.</p>
+    </div>
+
+    <div class="skill-card">
+      <h4>Linux & Support</h4>
+      <p>Linux commands, permissions, logs, service checks, connectivity checks, application support, and L1/L2 issue handling.</p>
+    </div>
+
+    <div class="skill-card">
+      <h4>Operations</h4>
+      <p>Incident management, SLA tracking, RCA support, escalation handling, documentation, stakeholder coordination, and change support.</p>
+    </div>
+
+    <div class="skill-card">
+      <h4>Learning & Practice</h4>
+      <p>Docker basics, Terraform basics, Kubernetes basics, CI/CD concepts, Prometheus, Grafana, and automation fundamentals.</p>
+    </div>
   </div>
 </section>
 
@@ -220,25 +328,25 @@ footer {
 
   <div class="card exp-item">
     <strong>IDFC FIRST Bank</strong><br>
-    Manager – Operations & Tech Support<br>
+    Manager – Operations & Technology Support<br>
     <small>Sep 2023 – Jan 2026</small>
 
     <ul>
-      <li>Handled production incidents and reduced downtime using CloudWatch monitoring and alerts</li>
-      <li>Managed AWS infrastructure including EC2, IAM, VPC, and S3 in live environments</li>
-      <li>Improved system reliability by proactive monitoring and troubleshooting</li>
+      <li>Supported production operations through incident coordination, SLA tracking, monitoring checks, documentation, and stakeholder follow-ups.</li>
+      <li>Worked on AWS operational support activities including EC2 checks, IAM access validation, S3 storage checks, CloudWatch monitoring, and basic VPC troubleshooting.</li>
+      <li>Assisted with issue analysis, RCA support, escalation handling, and service continuity for customer-facing and internal systems.</li>
     </ul>
   </div>
 
   <div class="card exp-item">
     <strong>ETTL Jaipur</strong><br>
     Cloud Operations Support<br>
-    <small>Mar 2022 – Aug 2024</small>
+    <small>Mar 2022 – Aug 2023</small>
 
     <ul>
-      <li>Supported cloud-based applications and resolved infrastructure issues</li>
-      <li>Monitored system performance and handled L1/L2 incidents</li>
-      <li>Worked with Linux systems and AWS services for operational support</li>
+      <li>Supported cloud operations activities including VM checks, storage validation, access checks, monitoring checks, and connectivity troubleshooting.</li>
+      <li>Assisted with application and infrastructure support tasks across Linux systems and cloud environments.</li>
+      <li>Maintained documentation for support activities, issue tracking, validation steps, and operational follow-ups.</li>
     </ul>
   </div>
 </section>
@@ -249,21 +357,21 @@ footer {
   <div class="projects">
 
     <div class="project">
-      <h4>AWS Highly Available Architecture</h4>
-      <p>EC2 + ASG + ALB + RDS deployed across multiple AZs</p>
-      <a href="https://github.com/ManMartand/terraform-aws-alb-asg" target="_blank">View Code</a>
+      <h4>AWS High Availability Architecture</h4>
+      <p>Designed and practiced an AWS architecture using EC2, ALB, Auto Scaling, and RDS across multiple Availability Zones.</p>
+      <a href="https://github.com/ManMartand/terraform-aws-alb-asg" target="_blank" rel="noopener noreferrer">View Project</a>
     </div>
 
     <div class="project">
-      <h4>Serverless Automation</h4>
-      <p>Lambda + S3 event-driven workflows</p>
-      <a href="https://github.com/ManMartand" target="_blank">View Code</a>
+      <h4>AWS Serverless Workflow</h4>
+      <p>Practiced event-driven workflow concepts using S3 events and Lambda for basic cloud automation scenarios.</p>
+      <a href="https://github.com/ManMartand" target="_blank" rel="noopener noreferrer">View GitHub</a>
     </div>
 
     <div class="project">
-      <h4>Monitoring System</h4>
-      <p>CloudWatch dashboards and alerting</p>
-      <a href="https://github.com/ManMartand/monitoring-prometheus-grafana" target="_blank">View Code</a>
+      <h4>Monitoring & Alerting Practice</h4>
+      <p>Worked on monitoring concepts using CloudWatch dashboards, alarms, logs, and basic Prometheus/Grafana learning.</p>
+      <a href="https://github.com/ManMartand/monitoring-prometheus-grafana" target="_blank" rel="noopener noreferrer">View Project</a>
     </div>
 
   </div>
@@ -273,9 +381,10 @@ footer {
   <h2>Contact</h2>
 
   <div class="card">
-    📧 manumartund@gmail.com <br>
-    📱 8619230802 <br>
-    🔗 <a href="https://github.com/ManMartand" target="_blank">GitHub</a>
+    📧 <a href="mailto:manumartund98@gmail.com">manumartund98@gmail.com</a><br>
+    📱 8619230802<br>
+    🔗 <a href="https://www.linkedin.com/in/mmd-manu-martund-clouder/" target="_blank" rel="noopener noreferrer">LinkedIn</a><br>
+    💻 <a href="https://github.com/ManMartand" target="_blank" rel="noopener noreferrer">GitHub</a>
   </div>
 </section>
 
@@ -284,7 +393,7 @@ footer {
 </footer>
 
 <script>
-const text = ["Cloud Engineer", "AWS Specialist", "DevOps Engineer"];
+const text = ["Cloud Support Engineer", "AWS Support Engineer", "Cloud Operations Engineer"];
 let i = 0, j = 0, current = "", isDeleting = false;
 
 function type() {
