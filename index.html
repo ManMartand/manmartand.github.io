@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Manu Martund - Cloud Operations and Support Engineer focused on AWS, Linux, monitoring, incident management, application support, and infrastructure support.">
+<meta name="description" content="Manu Martund - Cloud Operations and Support professional focused on AWS, Linux, monitoring, incident management, application support, and infrastructure support.">
 
-<title>Manu Martund | Cloud Engineer - Operations and Support</title>
+<title>Manu Martund | Cloud Engineer</title>
 
 <style>
 * {
@@ -20,7 +20,9 @@ html {
 }
 
 body {
-  background: linear-gradient(135deg, #1c1a17, #2a2623);
+  background:
+    radial-gradient(circle at top left, rgba(230, 184, 92, 0.12), transparent 30%),
+    linear-gradient(135deg, #0f172a, #111827 55%, #1f2937);
   color: #f1ede6;
   max-width: 1100px;
   margin: auto;
@@ -31,12 +33,13 @@ nav {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(40, 36, 32, 0.95);
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(8px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  border-bottom: 1px solid #3a342f;
+  border-bottom: 1px solid rgba(230, 184, 92, 0.18);
 }
 
 nav h2 {
@@ -94,6 +97,7 @@ nav a:hover {
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid #e6b85c;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
 }
 
 /* BUTTON */
@@ -126,12 +130,13 @@ h2 {
 
 /* CARD */
 .card {
-  background: rgba(255, 248, 235, 0.04);
-  border: 1px solid #3a342f;
-  padding: 20px;
-  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(230, 184, 92, 0.18);
+  padding: 22px;
+  border-radius: 14px;
   margin-bottom: 15px;
   line-height: 1.7;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
 .card strong {
@@ -150,10 +155,11 @@ small {
 }
 
 .skill-card {
-  background: rgba(255, 248, 235, 0.035);
-  border: 1px solid #3a342f;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(230, 184, 92, 0.18);
   padding: 18px;
-  border-radius: 10px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
 }
 
 .skill-card h4 {
@@ -189,11 +195,12 @@ small {
 }
 
 .project {
-  background: rgba(255, 248, 235, 0.03);
-  border: 1px solid #3a342f;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(230, 184, 92, 0.18);
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 14px;
   line-height: 1.6;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
 }
 
 .project h4 {
@@ -222,7 +229,7 @@ small {
 footer {
   text-align: center;
   padding: 20px;
-  border-top: 1px solid #3a342f;
+  border-top: 1px solid rgba(230, 184, 92, 0.18);
   color: #aaa;
 }
 
@@ -255,6 +262,11 @@ footer {
   .hero-image img {
     width: 160px;
     height: 160px;
+  }
+
+  .btn {
+    margin-right: 5px;
+    margin-left: 5px;
   }
 }
 </style>
@@ -300,6 +312,7 @@ footer {
 
 <section id="skills">
   <h2>Skills</h2>
+
   <div class="skills-grid">
     <div class="skill-card">
       <h4>Cloud & AWS</h4>
@@ -393,7 +406,7 @@ footer {
 </footer>
 
 <script>
-const text = ["AWS Support", "Cloud Operations", "Cloud Engineer"];
+const text = ["Cloud Engineer", "AWS Support Engineer", "Cloud Operations Engineer"];
 let i = 0, j = 0, current = "", isDeleting = false;
 
 function type() {
