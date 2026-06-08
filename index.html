@@ -1,433 +1,586 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Manu Martund - Cloud Operations and Support professional focused on AWS, Linux, monitoring, incident management, application support, and infrastructure support.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Manu Martund | Cloud Engineer</title>
+  <title>Manu Martund | Cloud & Application Support Engineer</title>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
+  <meta name="description" content="Manu Martund - Cloud & Application Support Engineer based in Pune with experience in AWS, Azure, Linux, monitoring, incident handling, access management, SLA tracking, RCA coordination, deployment support, documentation, and cross-team troubleshooting." />
 
-html {
-  scroll-behavior: smooth;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-  background:
-    radial-gradient(circle at top left, rgba(230, 184, 92, 0.12), transparent 30%),
-    linear-gradient(135deg, #0f172a, #111827 55%, #1f2937);
-  color: #f1ede6;
-  max-width: 1100px;
-  margin: auto;
-}
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7fb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
 
-/* NAV */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: rgba(15, 23, 42, 0.95);
-  backdrop-filter: blur(8px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  border-bottom: 1px solid rgba(230, 184, 92, 0.18);
-}
+    header {
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      color: white;
+      padding: 55px 20px;
+      text-align: center;
+    }
 
-nav h2 {
-  color: #e6b85c;
-  font-size: 22px;
-}
+    header h1 {
+      margin: 0;
+      font-size: 40px;
+      letter-spacing: 0.5px;
+    }
 
-nav a {
-  margin-left: 20px;
-  color: #d6cec2;
-  text-decoration: none;
-  font-size: 15px;
-}
+    header h2 {
+      margin: 12px 0;
+      font-weight: normal;
+      color: #dbeafe;
+      font-size: 22px;
+    }
 
-nav a:hover {
-  color: #e6b85c;
-}
+    header p {
+      max-width: 900px;
+      margin: 18px auto 0;
+      font-size: 16px;
+      color: #f1f5f9;
+    }
 
-/* HERO */
-.hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 80px 20px;
-  gap: 50px;
-}
+    nav {
+      background: #0f172a;
+      text-align: center;
+      padding: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-.hero-text {
-  max-width: 650px;
-}
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      margin: 0 12px;
+      font-size: 14px;
+      font-weight: bold;
+    }
 
-.hero h1 {
-  font-size: 42px;
-  line-height: 1.2;
-}
+    nav a:hover {
+      color: #93c5fd;
+    }
 
-.typing {
-  color: #e6b85c;
-  border-right: 2px solid #e6b85c;
-  padding-right: 5px;
-  min-height: 55px;
-}
+    section {
+      max-width: 1050px;
+      margin: 28px auto;
+      padding: 28px;
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
 
-.hero p {
-  margin-top: 20px;
-  color: #cfc7bb;
-  line-height: 1.7;
-  font-size: 17px;
-}
+    h2 {
+      color: #0f172a;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 8px;
+      margin-top: 0;
+    }
 
-/* IMAGE */
-.hero-image img {
-  width: 230px;
-  height: 230px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid #e6b85c;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
-}
+    h3 {
+      color: #1e40af;
+      margin-bottom: 5px;
+    }
 
-/* BUTTON */
-.btn {
-  display: inline-block;
-  margin-top: 22px;
-  padding: 10px 18px;
-  border: 1px solid #e6b85c;
-  color: #e6b85c;
-  border-radius: 6px;
-  text-decoration: none;
-  margin-right: 10px;
-  transition: 0.2s ease;
-}
+    p {
+      margin-top: 8px;
+    }
 
-.btn:hover {
-  background: #e6b85c;
-  color: black;
-}
+    .tagline {
+      margin-top: 18px;
+    }
 
-/* SECTIONS */
-section {
-  padding: 50px 20px;
-}
+    .badge {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #075985;
+      padding: 7px 11px;
+      border-radius: 20px;
+      margin: 5px;
+      font-size: 14px;
+      font-weight: 600;
+    }
 
-h2 {
-  color: #e6b85c;
-  margin-bottom: 20px;
-}
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
 
-/* CARD */
-.card {
-  background: rgba(255, 255, 255, 0.045);
-  border: 1px solid rgba(230, 184, 92, 0.18);
-  padding: 22px;
-  border-radius: 14px;
-  margin-bottom: 15px;
-  line-height: 1.7;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
+    .skill-card {
+      background: #f8fafc;
+      padding: 16px;
+      border-radius: 12px;
+      border-left: 4px solid #2563eb;
+    }
 
-.card strong {
-  color: #f7e0ac;
-}
+    .skill-card h3 {
+      margin-top: 0;
+    }
 
-small {
-  color: #aaa;
-}
+    .experience-item {
+      margin-bottom: 24px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #e5e7eb;
+    }
 
-/* SKILLS */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
-}
+    .experience-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
 
-.skill-card {
-  background: rgba(255, 255, 255, 0.045);
-  border: 1px solid rgba(230, 184, 92, 0.18);
-  padding: 18px;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-}
+    .role-meta {
+      color: #475569;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
 
-.skill-card h4 {
-  color: #f7e0ac;
-  margin-bottom: 8px;
-}
+    ul {
+      padding-left: 22px;
+    }
 
-.skill-card p {
-  color: #cfc7bb;
-  line-height: 1.6;
-}
+    li {
+      margin-bottom: 8px;
+    }
 
-/* EXPERIENCE */
-.exp-item {
-  margin-bottom: 20px;
-}
+    .project {
+      background: #f8fafc;
+      padding: 17px;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      border-left: 4px solid #0f766e;
+    }
 
-.exp-item ul {
-  margin-top: 10px;
-  padding-left: 18px;
-}
+    .project h3 {
+      margin-top: 0;
+      color: #0f766e;
+    }
 
-.exp-item li {
-  margin-bottom: 8px;
-  color: #cfc7bb;
-}
+    .contact {
+      text-align: center;
+    }
 
-/* PROJECTS */
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
+    .contact a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-.project {
-  background: rgba(255, 255, 255, 0.045);
-  border: 1px solid rgba(230, 184, 92, 0.18);
-  padding: 20px;
-  border-radius: 14px;
-  line-height: 1.6;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-}
+    .contact a:hover {
+      text-decoration: underline;
+    }
 
-.project h4 {
-  color: #f7e0ac;
-  margin-bottom: 8px;
-}
+    .buttons {
+      margin-top: 20px;
+    }
 
-.project p {
-  color: #cfc7bb;
-  margin-bottom: 12px;
-}
+    .button {
+      display: inline-block;
+      background: #2563eb;
+      color: white !important;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      margin: 6px;
+      font-weight: bold;
+    }
 
-.project a,
-.card a {
-  color: #e6b85c;
-  text-decoration: none;
-  font-size: 14px;
-}
+    .button.secondary {
+      background: #0f766e;
+    }
 
-.project a:hover,
-.card a:hover {
-  text-decoration: underline;
-}
+    footer {
+      text-align: center;
+      padding: 22px;
+      color: #64748b;
+      font-size: 14px;
+    }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  border-top: 1px solid rgba(230, 184, 92, 0.18);
-  color: #aaa;
-}
+    @media (max-width: 700px) {
+      header h1 {
+        font-size: 32px;
+      }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    gap: 10px;
-  }
+      header h2 {
+        font-size: 19px;
+      }
 
-  nav a {
-    margin: 0 8px;
-    font-size: 14px;
-  }
+      nav {
+        position: static;
+      }
 
-  .hero {
-    flex-direction: column-reverse;
-    text-align: center;
-    padding: 55px 20px;
-  }
+      nav a {
+        display: inline-block;
+        margin: 6px 8px;
+      }
 
-  .hero h1 {
-    font-size: 32px;
-  }
-
-  .typing {
-    min-height: 42px;
-  }
-
-  .hero-image img {
-    width: 160px;
-    height: 160px;
-  }
-
-  .btn {
-    margin-right: 5px;
-    margin-left: 5px;
-  }
-}
-</style>
+      section {
+        margin: 18px 12px;
+        padding: 22px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<nav>
-  <h2>Manu Martund</h2>
-  <div>
+  <header>
+    <h1>Manu Martund</h1>
+    <h2>Cloud & Application Support Engineer</h2>
+
+    <p>
+      Cloud and Application Support professional based in Pune with experience in AWS,
+      Azure, Linux, monitoring, incident handling, access management, SLA tracking,
+      RCA coordination, deployment support, documentation, and cross-team troubleshooting.
+    </p>
+
+    <div class="tagline">
+      <span class="badge">AWS</span>
+      <span class="badge">Azure</span>
+      <span class="badge">Linux</span>
+      <span class="badge">CloudWatch</span>
+      <span class="badge">Incident Management</span>
+      <span class="badge">Application Support</span>
+      <span class="badge">Access Management</span>
+      <span class="badge">SLA Tracking</span>
+    </div>
+  </header>
+
+  <nav>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
+    <a href="#certifications">Certifications</a>
     <a href="#contact">Contact</a>
-  </div>
-</nav>
+  </nav>
 
-<div class="hero">
-  <div class="hero-text">
-    <h1>Hi, I'm Manu 👋</h1>
-    <h1 class="typing" id="typing"></h1>
+  <section id="about">
+    <h2>About Me</h2>
 
     <p>
-      Cloud Operations and Support professional focused on AWS, Linux, monitoring, incident management, application support, access validation, SLA tracking, RCA support, and infrastructure troubleshooting.
+      I am a Cloud and Application Support Engineer with hands-on exposure to AWS,
+      Azure, Linux, monitoring tools, incident handling, access management, deployment
+      support, and production support activities.
     </p>
-    
-    <a class="btn" href="Resume_Manu_Martund_Dadhich.pdf" target="_blank" rel="noopener noreferrer">View Resume</a>
-    <a class="btn" href="mailto:manumartund98@gmail.com">Contact Me</a>
-  </div>
 
-  <div class="hero-image">
-    <img src="resume.jpeg" alt="Manu Martund profile photo">
-  </div>
-</div>
+    <p>
+      My experience includes supporting enterprise applications, monitoring system health,
+      analyzing alerts and logs, validating user access, coordinating with application,
+      infrastructure, DevOps, and security teams, and maintaining clear documentation
+      for issue investigation and resolution.
+    </p>
 
-<section id="about">
-  <h2>About</h2>
-  <div class="card">
-    I am a Cloud Operations and Support professional with experience in AWS, Linux, application support, incident coordination, SLA tracking, monitoring checks, access validation, documentation, and production support activities. I am focused on Cloud Support, AWS Support, Application Support, Linux Support, and Infrastructure Support roles.
-  </div>
-</section>
+    <p>
+      I am currently focused on Cloud Support, Application Support, Infrastructure Support,
+      and IT Operations roles where I can contribute through troubleshooting, ticket handling,
+      monitoring, SLA-driven support, access validation, documentation, and operational ownership.
+    </p>
+  </section>
 
-<section id="skills">
-  <h2>Skills</h2>
+  <section id="skills">
+    <h2>Core Skills</h2>
 
-  <div class="skills-grid">
-    <div class="skill-card">
-      <h4>Cloud & AWS</h4>
-      <p>EC2, S3, IAM, VPC, CloudWatch, basic Lambda, basic RDS, access checks, resource monitoring, and troubleshooting.</p>
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <h3>Cloud Support</h3>
+        <p>
+          AWS EC2, S3, IAM, VPC, CloudWatch, Auto Scaling, Load Balancer, EBS,
+          RDS basics, Azure VM, Azure Storage Account, VNet, and Azure AD basics.
+        </p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Monitoring & Troubleshooting</h3>
+        <p>
+          CloudWatch metrics, logs, alarms, Azure Monitor, Prometheus, Grafana,
+          Node Exporter, log analysis, alert checks, and issue investigation.
+        </p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Application & Production Support</h3>
+        <p>
+          Application health checks, incident response, deployment support,
+          service checks, log review, escalation handling, and L1/L2 support activities.
+        </p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Access Management</h3>
+        <p>
+          IAM permissions, RBAC basics, Azure AD basics, user access validation,
+          permission checks, onboarding/offboarding support, and least privilege practices.
+        </p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Incident & IT Operations</h3>
+        <p>
+          Incident management, SLA tracking, RCA support, escalation handling,
+          change support, ticket updates, stakeholder coordination, and documentation.
+        </p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Networking & System Basics</h3>
+        <p>
+          Subnets, route tables, IGW, NAT basics, security groups, NACLs, NSGs,
+          VPN basics, DNS/DHCP basics, Windows Server basics, and connectivity troubleshooting.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="tools">
+    <h2>Tools & Technologies</h2>
+
+    <span class="badge">AWS EC2</span>
+    <span class="badge">AWS S3</span>
+    <span class="badge">AWS IAM</span>
+    <span class="badge">AWS VPC</span>
+    <span class="badge">CloudWatch</span>
+    <span class="badge">Auto Scaling</span>
+    <span class="badge">Load Balancer</span>
+    <span class="badge">EBS</span>
+    <span class="badge">RDS Basics</span>
+    <span class="badge">Azure VM</span>
+    <span class="badge">Azure Storage</span>
+    <span class="badge">Azure Monitor</span>
+    <span class="badge">Azure AD</span>
+    <span class="badge">Linux</span>
+    <span class="badge">Windows Server Basics</span>
+    <span class="badge">DNS/DHCP Basics</span>
+    <span class="badge">Networking Basics</span>
+    <span class="badge">ServiceNow</span>
+    <span class="badge">Incident Management</span>
+    <span class="badge">SLA Tracking</span>
+    <span class="badge">RCA Support</span>
+    <span class="badge">Change Support</span>
+    <span class="badge">Git</span>
+    <span class="badge">GitHub</span>
+    <span class="badge">Python Basics</span>
+    <span class="badge">Terraform Basics</span>
+    <span class="badge">CloudFormation Basics</span>
+    <span class="badge">Jenkins Basics</span>
+    <span class="badge">Docker Basics</span>
+    <span class="badge">Kubernetes Concepts</span>
+    <span class="badge">Prometheus</span>
+    <span class="badge">Grafana</span>
+    <span class="badge">Node Exporter</span>
+
+  </section>
+
+  <section id="experience">
+    <h2>Professional Experience</h2>
+
+    <div class="experience-item">
+      <h3>Freelancing - Cloud & DevOps Projects</h3>
+      <div class="role-meta">Jan 2026 - Present</div>
+
+      <ul>
+        <li>
+          Developed a Firebase/Firestore based gated society work-tracking dashboard
+          to create, update, and monitor maintenance issues reported by residents.
+        </li>
+        <li>
+          Built issue status workflows and incorporated stakeholder feedback before
+          final approval, improving visibility of pending and completed work.
+        </li>
+        <li>
+          Practiced AWS, Linux, monitoring, infrastructure documentation, and basic
+          troubleshooting through hands-on cloud support projects.
+        </li>
+      </ul>
     </div>
 
-    <div class="skill-card">
-      <h4>Linux & Support</h4>
-      <p>Linux commands, permissions, logs, service checks, connectivity checks, application support, and L1/L2 issue handling.</p>
+    <div class="experience-item">
+      <h3>IDFC FIRST Bank - Cloud Operations Support</h3>
+      <div class="role-meta">Sep 2023 - Jan 2026</div>
+
+      <ul>
+        <li>
+          Supported 99.9% uptime-focused production operations for enterprise banking
+          applications, including incident response, monitoring, SLA adherence, and
+          operational reliability.
+        </li>
+        <li>
+          Analyzed CloudWatch logs, metrics, alarms, and dashboards to troubleshoot
+          production alerts, identify recurring patterns, and support faster incident
+          resolution.
+        </li>
+        <li>
+          Handled infrastructure and access support requests involving IAM permissions,
+          EC2 health checks, monitoring alerts, and AWS resource utilization reviews.
+        </li>
+        <li>
+          Improved investigation efficiency by creating reusable troubleshooting notes
+          for CloudWatch alerts, IAM issues, EC2 checks, RCA inputs, and escalation workflows.
+        </li>
+        <li>
+          Coordinated with application, infrastructure, DevOps, and security teams for
+          incident resolution, production changes, RCA support, and rollback readiness.
+        </li>
+      </ul>
     </div>
 
-    <div class="skill-card">
-      <h4>Operations</h4>
-      <p>Incident management, SLA tracking, RCA support, escalation handling, documentation, stakeholder coordination, and change support.</p>
+    <div class="experience-item">
+      <h3>ETTL - Cloud Engineer / Cloud Operations Support</h3>
+      <div class="role-meta">Mar 2022 - Aug 2023</div>
+
+      <ul>
+        <li>
+          Supported Azure migration and cloud operations activities across Azure VMs,
+          Storage Accounts, access validation, post-migration checks, monitoring, and
+          connectivity verification.
+        </li>
+        <li>
+          Improved post-migration validation accuracy using structured checks for storage
+          access, permissions, connectivity, availability, and operational documentation.
+        </li>
+        <li>
+          Reduced manual verification effort through reusable validation notes,
+          troubleshooting documentation, and support workflow updates.
+        </li>
+      </ul>
     </div>
 
-    <div class="skill-card">
-      <h4>Learning & Practice</h4>
-      <p>Docker basics, Terraform basics, Kubernetes basics, CI/CD concepts, Prometheus, Grafana, and automation fundamentals.</p>
+    <div class="experience-item">
+      <h3>ETTL - Mechanical Engineer</h3>
+      <div class="role-meta">Jan 2020 - Jan 2022</div>
+
+      <ul>
+        <li>
+          Prepared technical reports and coordinated with engineering teams for QA,
+          compliance checks, documentation, and structured problem solving.
+        </li>
+      </ul>
     </div>
-  </div>
-</section>
 
-<section id="experience">
-  <h2>Experience</h2>
+  </section>
 
-  <div class="card exp-item">
-    <strong>IDFC FIRST Bank</strong><br>
-    Manager – Operations & Technology Support<br>
-    <small>Sep 2023 – Jan 2026</small>
-
-    <ul>
-      <li>Supported production operations through incident coordination, SLA tracking, monitoring checks, documentation, and stakeholder follow-ups.</li>
-      <li>Worked on AWS operational support activities including EC2 checks, IAM access validation, S3 storage checks, CloudWatch monitoring, and basic VPC troubleshooting.</li>
-      <li>Assisted with issue analysis, RCA support, escalation handling, and service continuity for customer-facing and internal systems.</li>
-    </ul>
-  </div>
-
-  <div class="card exp-item">
-    <strong>ETTL Jaipur</strong><br>
-    Cloud Operations Support<br>
-    <small>Mar 2022 – Aug 2023</small>
-
-    <ul>
-      <li>Supported cloud operations activities including VM checks, storage validation, access checks, monitoring checks, and connectivity troubleshooting.</li>
-      <li>Assisted with application and infrastructure support tasks across Linux systems and cloud environments.</li>
-      <li>Maintained documentation for support activities, issue tracking, validation steps, and operational follow-ups.</li>
-    </ul>
-  </div>
-</section>
-
-<section id="projects">
-  <h2>Projects</h2>
-
-  <div class="projects">
+  <section id="projects">
+    <h2>Projects</h2>
 
     <div class="project">
-      <h4>AWS High Availability Architecture</h4>
-      <p>Designed and practiced an AWS architecture using EC2, ALB, Auto Scaling, and RDS across multiple Availability Zones.</p>
-      <a href="https://github.com/ManMartand/terraform-aws-alb-asg" target="_blank" rel="noopener noreferrer">View Project</a>
+      <h3>AWS DevOps Monitoring Platform</h3>
+      <p><strong>Tools:</strong> AWS EC2, Linux, Prometheus, Grafana, Node Exporter</p>
+      <ul>
+        <li>
+          Deployed an EC2-based monitoring stack to track CPU, memory, disk, uptime,
+          and service availability.
+        </li>
+        <li>
+          Centralized server health visibility using Grafana dashboards and basic
+          monitoring checks.
+        </li>
+        <li>
+          Documented AWS/Linux setup and troubleshooting commands covering EC2 access,
+          package installation, service management, security group validation, and
+          monitoring setup.
+        </li>
+      </ul>
     </div>
 
     <div class="project">
-      <h4>AWS Serverless Workflow</h4>
-      <p>Practiced event-driven workflow concepts using S3 events and Lambda for basic cloud automation scenarios.</p>
-      <a href="https://github.com/ManMartand" target="_blank" rel="noopener noreferrer">View GitHub</a>
+      <h3>Gated Society Web Dashboard</h3>
+      <p><strong>Tools:</strong> HTML, CSS, JavaScript, Firebase, Firestore</p>
+      <ul>
+        <li>
+          Created a web dashboard for residents to log, update, and track maintenance
+          issues in a gated society.
+        </li>
+        <li>
+          Designed simple issue status workflows to improve visibility of pending,
+          in-progress, and completed work.
+        </li>
+        <li>
+          Focused on issue tracking, user visibility, and communication between
+          residents and society stakeholders.
+        </li>
+      </ul>
     </div>
 
     <div class="project">
-      <h4>Monitoring & Alerting Practice</h4>
-      <p>Worked on monitoring concepts using CloudWatch dashboards, alarms, logs, and basic Prometheus/Grafana learning.</p>
-      <a href="https://github.com/ManMartand/monitoring-prometheus-grafana" target="_blank" rel="noopener noreferrer">View Project</a>
+      <h3>Additional Cloud & DevOps Practice Projects</h3>
+      <p><strong>Tools:</strong> AWS, GitHub, EC2, Auto Scaling, Load Balancer, VPC, S3, RDS, IAM, CloudWatch, Lambda</p>
+      <ul>
+        <li>
+          Designed practice cloud architectures using AWS compute, storage, networking,
+          monitoring, and access management services.
+        </li>
+        <li>
+          Practiced S3 lifecycle policies, replication concepts, event-driven Lambda
+          workflows, IAM permission checks, and CloudWatch monitoring basics.
+        </li>
+      </ul>
     </div>
 
-  </div>
-</section>
+  </section>
 
-<section id="contact">
-  <h2>Contact</h2>
+  <section id="certifications">
+    <h2>Certifications & Education</h2>
 
-  <div class="card">
-    📧 <a href="mailto:manumartund98@gmail.com">manumartund98@gmail.com</a><br>
-    📱 8619230802<br>
-    🔗 <a href="https://www.linkedin.com/in/mmd-manu-martund-clouder/" target="_blank" rel="noopener noreferrer">LinkedIn</a><br>
-    💻 <a href="https://github.com/ManMartand" target="_blank" rel="noopener noreferrer">GitHub</a>
-  </div>
-</section>
+    <p>
+      <strong>Post Graduate Program in Cloud Computing</strong><br />
+      Caltech CTME / Simplilearn, 2023
+    </p>
 
-<footer>
-  © 2026 Manu Martund
-</footer>
+    <p>
+      <strong>B.Tech Mechanical Engineering</strong><br />
+      Symbiosis International University, 2019
+    </p>
 
-<script>
-const text = ["Cloud Engineer", "AWS Support Engineer", "Cloud Operations Engineer"];
-let i = 0, j = 0, current = "", isDeleting = false;
+    <p>
+      <strong>Current Learning Focus:</strong><br />
+      AWS, Azure, Linux, monitoring, cloud troubleshooting, access management,
+      application support, Terraform basics, Docker basics, Kubernetes concepts,
+      Windows Server basics, Azure AD basics, and networking fundamentals.
+    </p>
+  </section>
 
-function type() {
-  current = text[i];
-  document.getElementById("typing").textContent = current.substring(0, j);
+  <section id="strengths">
+    <h2>Key Strengths</h2>
 
-  if (!isDeleting && j < current.length) {
-    j++;
-    setTimeout(type, 100);
-  } else if (isDeleting && j > 0) {
-    j--;
-    setTimeout(type, 50);
-  } else {
-    isDeleting = !isDeleting;
-    if (!isDeleting) i = (i + 1) % text.length;
-    setTimeout(type, 800);
-  }
-}
+    <span class="badge">Production Support Mindset</span>
+    <span class="badge">Cloud Troubleshooting</span>
+    <span class="badge">Cross-Team Coordination</span>
+    <span class="badge">Clear Documentation</span>
+    <span class="badge">Incident Handling</span>
+    <span class="badge">SLA Ownership</span>
+    <span class="badge">Access Validation</span>
+    <span class="badge">Fast Learner</span>
+  </section>
 
-type();
-</script>
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+
+    <p><strong>Email:</strong> <a href="mailto:manumartund98@gmail.com">manumartund98@gmail.com</a></p>
+    <p><strong>Phone:</strong> +91 9970130735</p>
+    <p><strong>Location:</strong> Pune, Maharashtra, India</p>
+
+    <div class="buttons">
+      <a class="button" href="mailto:manumartund98@gmail.com">Email Me</a>
+      <a class="button secondary" href="https://github.com/manmartand" target="_blank">GitHub</a>
+      <a class="button" href="https://www.linkedin.com/in/mmd-manu-martund-cloud/" target="_blank">LinkedIn</a>
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 Manu Martund | Cloud & Application Support Engineer
+  </footer>
 
 </body>
 </html>
